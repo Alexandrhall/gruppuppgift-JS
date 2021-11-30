@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "cyp": "cypress open",
-        "parcel": "parcel src/index.html"
+        "parcel": "parcel src/index.html src/pages/products.html src/pages/productinfo.html src/pages/checkout.html src/pages/cart.html"
     },
     "repository": {
         "type": "git",
