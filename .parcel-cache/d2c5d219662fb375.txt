@@ -31,7 +31,7 @@
 121C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\es6-object-assign\dist\object-assign.min.js131343429080000000 0
 103C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\uri-js\dist\esnext\uri.js121436361000000000 0
 141C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\postcss-modules-values\node_modules\supports-color\package.json132827339179511610 0
-77C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\package.json132827350017890655 0
+77C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\package.json132827491033924792 0
 123C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\@swc\helpers\src\_async_generator_delegate.js132732112500000000 0
 133C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\jsdom\lib\jsdom\living\aborting\AbortController-impl.js121436361000000000 0
 128C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\rxjs\dist\esm\internal\operators\ignoreElements.js121436361000000000 0
@@ -255,7 +255,7 @@
 95C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\lodash\compact.js121436361000000000 0
 146C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\uncss\node_modules\postcss-selector-parser\dist\selectors\comment.js121436361000000000 0
 120C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\rxjs\dist\esm\internal\Subscription.js.map121436361000000000 0
-96C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\src\scss\pages\productinfo.scss132827488759332318 0
+96C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\src\scss\pages\productinfo.scss132827491625001182 0
 100C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\object-is\CHANGELOG.md121436361000000000 0
 139C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\postcss-modules-scope\node_modules\postcss\lib\declaration.js121436361000000000 0
 103C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\node_modules\core-js\es\promise\any.js121436361000000000 0
@@ -20928,14 +20928,14 @@
 87C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\index.58ba51d9.js132827489474626668 0
 91C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\index.58ba51d9.js.map132827489475186616 0
 88C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\index.603968dc.css132827489474626668 0
-75C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages132827489475346609 1
+75C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages132827491630999860 1
 93C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\cart.65ca3284.css132827489474626668 0
 85C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\cart.html132827489474626668 0
 97C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\checkout.2e9d2cd4.css132827489474626668 0
 96C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\checkout.d173ccee.js132827489474626668 0
 100C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\checkout.d173ccee.js.map132827489475186616 0
-100C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\productinfo.2d911f05.css132827489474626668 0
-104C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\productinfo.2d911f05.css.map132827489475186616 0
+100C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\productinfo.2d911f05.css132827491630759659 0
+104C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\productinfo.2d911f05.css.map132827491630919664 0
 101C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\products.d88d8ed7.css.map132827489475186616 0
 96C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\products.e4c78d7d.js132827489474626668 0
 89C:\Users\alexa\Desktop\Skola\Frontend\Javascript\gruppuppgift-JS\dist\pages\products.html132827489474626668 0
