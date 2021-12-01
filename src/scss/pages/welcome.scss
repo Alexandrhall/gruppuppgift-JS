@@ -27,16 +27,18 @@ main{
                 width: 100%;
             }
         }
+
+        span{
+            font-size: 22pt;
+        }
     }
 
     #continueButton{
-        width: 60%;
+        width: 200px;
         height: 50px;
         background-color: #5E7E9B;
-        border: 2px solid black;
-        border-radius: 50px;
-        color: white;
-        
+        border-radius: 10px;
+        border: none;
     }
 
 
