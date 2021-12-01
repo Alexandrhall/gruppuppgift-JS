@@ -1,3 +1,21 @@
 html {
-    background-color: pink;
+    // background-color: pink;
+    body {
+        margin: 0;
+    }
+}
+
+.headwrap {
+    border: 1px black solid;
+    height: 180px;
+    margin: 0 auto;
+    width: 70vw;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .navMenu {
+        margin: 30px;
+    }
 }
