@@ -4,8 +4,7 @@ body{
     justify-content: center;    
     margin: 0;
     height: 100vh;
-    background: rgb(62,85,106);
-    background: linear-gradient(0deg, rgba(62,85,106,1) 6%, rgba(94,126,155,1) 48%);
+    background-color: white;
 }
 
 main{
@@ -39,6 +38,7 @@ main{
         background-color: #5E7E9B;
         border-radius: 10px;
         border: none;
+        color: white;
         cursor: pointer;
     }
 
