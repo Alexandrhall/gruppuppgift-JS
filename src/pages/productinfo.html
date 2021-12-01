@@ -5,16 +5,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link href="../scss/main.scss" rel="stylesheet" />
         <link href="../scss/pages/productinfo.scss" rel="stylesheet" />
+        <link href="../scss/main.scss" rel="stylesheet" />
         <script type="module" src="../ts/pages/productinfo.ts"></script>
     </head>
     <body>
         <header class="headwrap">
-            <div class="navMenu">
-                <a href="../pages/products.html">Produkter</a>
-                <a href="../pages/cart.html">Varukorg</a>
-                <a href="">Kontakt</a>
+            <div class="p-menu1">
+                <nav id="navbar" class="navigation" role="navigation">
+                    <input id="toggle1" type="checkbox" />
+                    <label class="hamburger1" for="toggle1">
+                        <div class="top"></div>
+                        <div class="meat"></div>
+                        <div class="bottom"></div>
+                    </label>
+
+                    <nav class="menu1">
+                        <a class="link1" href="../pages/products.html"
+                            ><p>Produkter</p></a
+                        >
+                        <a class="link1" href="../pages/cart.html"
+                            ><p>Varukorg</p></a
+                        >
+                        <a class="link1" href=""><p>Kontakt</p></a>
+                    </nav>
+                </nav>
             </div>
         </header>
         <h1>Hej Här har vi info om en produkt</h1>

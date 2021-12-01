@@ -7,3 +7,132 @@ $blue: #5e7e9b;
 html {
     background-color: #5e7e9b;
 }
+
+.headwrap {
+    // border: 1px black solid;
+    height: 180px;
+    margin: 0 auto;
+    width: 70vw;
+
+    // display: flex;
+    // align-items: flex-end;
+    // justify-content: flex-end;
+
+    .navMenu {
+        margin: 30px;
+    }
+}
+
+.p-menu1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    // position: absolute;
+    width: 100%;
+    justify-content: right;
+}
+.hamburger1 {
+    height: 45px;
+    margin-left: 25%;
+}
+.hamburger1 div {
+    // background-color: var.$detail-color;
+    background-color: black;
+    border-radius: 10px;
+    width: 40px;
+    height: 5px;
+    margin: 0 auto;
+    margin-top: 7px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+#toggle1 {
+    display: none;
+}
+
+#toggle1:checked + .hamburger1 .top {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-top: 22.5px;
+    // margin: 0 auto;
+}
+
+#toggle1:checked + .hamburger1 .meat {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -5px;
+    // margin: 0 auto;
+}
+
+#toggle1:checked + .hamburger1 .bottom {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    // margin: 0 auto;
+}
+
+#toggle1:checked ~ .menu1 {
+    height: 250px;
+}
+
+.menu1 {
+    background-color: inherit;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    padding-right: 10px;
+    list-style: none;
+    clear: both;
+    width: auto;
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+    z-index: 120;
+    transition: all 0.3s ease;
+    a {
+        text-decoration: none;
+        // color: var.$detail-color;
+    }
+}
+
+.menu1 a:last-child {
+    margin-bottom: 40px;
+}
+
+.link1 {
+    width: 100%;
+    margin: 0;
+    // height: 50px;
+    // padding: 10px 0;
+    // font: 12pt "Oswald", sans-serif;
+    font-size: 12pt;
+    color: black;
+}
+
+.link1:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+    color: rgb(61, 61, 61);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 720px) {
+    .hamburger1 {
+        display: none;
+    }
+    .headwrap {
+        .menu1 {
+            overflow: visible;
+            flex-direction: row;
+            gap: 15px;
+            align-items: flex-end;
+            height: 180px;
+            margin-right: 10px;
+        }
+        .menu1 a:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
