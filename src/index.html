@@ -6,12 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link href="scss/main.scss" rel="stylesheet" />
-        <script type="module" src="ts/main.ts"></script>
+        <link rel="stylesheet" href="./scss/pages/welcome.scss">
+        <script src="https://kit.fontawesome.com/808f42d8cc.js" crossorigin="anonymous"></script>
+        <script type="module" src="ts//pages/welcome.ts"></script>
     </head>
     <body>
-        <a href="/src/pages/products.html">Produkter</a>
-        <a href="/src/pages/productinfo.html">Produktinfo</a>
-        <a href="/src/pages/checkout.html">checkout</a>
-        <a href="/src/pages/cart.html">Cart</a>
+        <main>
+            <div id="infoWrapper">
+                <div id="logoWrapper">
+                    <img src="./images/check.png" alt="checkmates logo">
+                </div>
+                <span>"In playing board games we trust"</span>
+            </div>
+            <button id="continueButton">
+                Continue to shop 
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </main>
     </body>
 </html>
