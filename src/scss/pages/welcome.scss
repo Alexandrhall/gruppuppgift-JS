@@ -1,10 +1,12 @@
 body{
     display: flex;
     flex-direction: column;
-    justify-content: center;    
+    justify-content: center;  
     margin: 0;
     height: 100vh;
-    background-color: white;
+    background-color: #EDF7D2;
+    background-image: url("/src/images/checkeredgrey.png");
+    background-size: 180px;
 }
 
 main{
@@ -13,6 +15,7 @@ main{
     align-items: center;
     justify-content: center;
     row-gap: 50px;
+    
 
     #infoWrapper{
         display: flex;
@@ -21,7 +24,6 @@ main{
 
         #logoWrapper{
             width: 300px;
-
             img{
                 width: 100%;
             }
@@ -29,6 +31,7 @@ main{
 
         span{
             font-size: 22pt;
+            color: black;
         }
     }
 
@@ -40,6 +43,11 @@ main{
         border: none;
         color: white;
         cursor: pointer;
+        text-transform: uppercase;
+
+        .fasfa-chevron-right{
+            font-size: 30pt;
+        }
     }
 
 
