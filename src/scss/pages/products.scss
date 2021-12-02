@@ -1,4 +1,37 @@
 html {
-    background-color: blueviolet;
-    color: orange;
+  background-color: blueviolet;
+  color: orange;
+}
+//Footer SH
+footer {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20%;
+
+  .footer-menu {
+    padding: 0;
+  }
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    text-align: center;
+    line-height: 2;
+    &:hover {
+      color: black;
+    }
+  }
+}
+.media {
+  display: flex;
+  justify-content: center;
+
+  i {
+    padding: 15%;
+  }
 }
