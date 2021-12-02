@@ -2,6 +2,86 @@ html {
   background-color: blueviolet;
   color: orange;
 }
+//Inside body - container product test SH
+.containerProduct {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  h3 {
+    color: black;
+    margin-bottom: 5px;
+  }
+  .productOne {
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(250, 217, 133);
+    width: 270px;
+
+    .pic {
+      width: 200px;
+      box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.507);
+      margin-bottom: 10px;
+    }
+    .dice {
+    }
+    .infoOne {
+      color: black;
+      background-color: blanchedalmond;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    .productButton {
+      align-self: flex-end;
+      margin: 10px;
+      padding: 0px 10px;
+      border-radius: 50%;
+      background-color: rgb(134, 238, 134);
+    }
+  }
+  h3 {
+    color: black;
+    margin-bottom: 5px;
+  }
+  .productTwo {
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(101, 196, 167);
+    width: 270px;
+
+    .pic {
+      width: 200px;
+      box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.507);
+      margin-bottom: 10px;
+    }
+    .dice {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+    .infoTwo {
+      color: black;
+      background-color: blanchedalmond;
+      margin: 20px;
+      padding: 10px;
+      box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.507);
+    }
+    .productButtonTwo {
+      align-self: flex-end;
+      margin: 10px;
+      padding: 0px 10px;
+
+      background-color: rgb(127, 192, 127);
+    }
+  }
+}
+
 //Footer SH
 footer {
   display: flex;
