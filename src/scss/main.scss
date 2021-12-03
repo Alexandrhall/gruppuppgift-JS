@@ -1,8 +1,10 @@
-$black: #2e282a;
-$red: #d9594c;
-$pear: #edf7d2;
-$green: #5b7553;
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+
+$blue: #5E7E9B;
+$gray: #E5E5E5;
+
 
 html {
-    background-color: $red;
+    background-color: $gray;
+    font-family: 'Oxygen', sans-serif;
 }
