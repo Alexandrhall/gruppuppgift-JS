@@ -31,9 +31,22 @@ html {
     background-color: white;
     width: 70vw;
     display: flex;
+    max-width: 1070px;
+
+    .loggo {
+        background-image: url("/dist/checkeredgrey.505d7a62.png");
+        width: 150px;
+        height: 125px;
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
 
     .fa {
-        margin-top: 30px;
+        margin-top: 28px;
         font-size: 24pt;
         cursor: pointer;
     }
