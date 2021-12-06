@@ -6,6 +6,13 @@ $blue: #5e7e9b;
 
 html {
     background-color: white;
+    body {
+        margin: 0;
+    }
+}
+
+#log {
+    cursor: pointer;
 }
 
 .prodCat {

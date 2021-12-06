@@ -8,9 +8,15 @@
         <link href="../scss/pages/products.scss" rel="stylesheet" />
         <link href="../scss/main.scss" rel="stylesheet" />
         <script type="module" src="../ts/pages/products.ts"></script>
+        <script type="module" src="../ts/main.ts"></script>
+        <script
+            src="https://kit.fontawesome.com/9604976d4b.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <header class="headwrap">
+            <img class="loggo" id="log" src="../assetes/pictures/check.png"></img>
             <div class="p-menu1">
                 <nav id="navbar" class="navigation" role="navigation">
                     <input id="toggle1" type="checkbox" />
@@ -31,7 +37,16 @@
                     </nav>
                 </nav>
             </div>
+            <a href="../pages/cart.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
         </header>
+        <div class="prodCat">
+            <span class="prodSort">Alla Spel</span>
+            <span class="prodSort">Brädspel</span>
+            <span class="prodSort">Kortspel</span>
+            <span class="prodSort">Familjespel</span>
+        </div>
         <h1>Hej Här har vi våra produkter</h1>
     </body>
 </html>
