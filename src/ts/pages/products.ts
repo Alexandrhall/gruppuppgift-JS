@@ -25,15 +25,16 @@ function createHTML(){
         let product = gameList[i];
 
         let prodDiv:HTMLDivElement = document.createElement("div");
+        prodDiv.className = "game-div"
         let prodName:HTMLSpanElement = document.createElement("span");
-        prodName.className="gameName";
+        prodName.className="game-name";
 
         let prodImage:HTMLImageElement = document.createElement("img");
         let imageWrapper:HTMLDivElement = document.createElement("div");
-        imageWrapper.className = "gameImgWrapper";
+        imageWrapper.className = "game-img-wrapper";
 
         let prodDes:HTMLParagraphElement = document.createElement("p");
-        prodDes.className = "gameDes";
+        prodDes.className = "game-description";
 
         prodName.innerHTML = product.name;
         prodImage.src = product.image;

@@ -2,6 +2,32 @@ html {
   background-color: blueviolet;
   color: orange;
 }
+
+#product-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+
+  .game-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 370px;
+    background-color: white;
+    color: black;
+
+    .game-name{
+      font-weight: bold;
+    }
+
+    .game-description{
+      width: 90%;
+    }
+  }
+}
+
 //Footer SH
 footer {
   display: flex;
