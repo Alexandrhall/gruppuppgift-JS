@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- Font awsome link SH -->
-    <script
-      src="https://kit.fontawesome.com/9604976d4b.js"
-      crossorigin="anonymous"
-    ></script>
-    <link href="../scss/pages/products.scss" rel="stylesheet" />
-    <script type="module" src="../ts/pages/products.ts"></script>
-  </head>
-  <body>
-    <div id="product-wrapper">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="../scss/pages/products.scss" rel="stylesheet" />
+        <link href="../scss/main.scss" rel="stylesheet" />
+        <script type="module" src="../ts/pages/products.ts"></script>
+        <script type="module" src="../ts/main.ts"></script>
+        <script
+            src="https://kit.fontawesome.com/9604976d4b.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <header class="headwrap">
+            <img class="loggo" id="log" src="../assetes/pictures/check.png"></img>
+            <div class="p-menu1">
+                <nav id="navbar" class="navigation" role="navigation">
+                    <input id="toggle1" type="checkbox" />
+                    <label class="hamburger1" for="toggle1">
+                        <div class="top"></div>
+                        <div class="meat"></div>
+                        <div class="bottom"></div>
+                    </label>
 
-    </div>
-  </body>
-  <footer>
+                    <nav class="menu1">
+                        <a class="link1" href="../pages/products.html"
+                            ><p>Produkter</p></a
+                        >
+                        <a class="link1" href="../pages/cart.html"
+                            ><p>Varukorg</p></a
+                        >
+                        <a class="link1" href=""><p>Kontakt</p></a>
+                    </nav>
+                </nav>
+            </div>
+            <a href="../pages/cart.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+        </header>
+        <div class="prodCat">
+            <span class="prodSort">Alla Spel</span>
+            <span class="prodSort">Brädspel</span>
+            <span class="prodSort">Kortspel</span>
+            <span class="prodSort">Familjespel</span>
+        </div>
+         <div id="product-wrapper">
+        <h1>Hej Här har vi våra produkter</h1>
+             <footer>
     <div class="footer-menu">
       <ul>
         <li>Hem</li>
@@ -48,4 +79,5 @@
       </i>
     </div>
   </footer>
+    </body>
 </html>
