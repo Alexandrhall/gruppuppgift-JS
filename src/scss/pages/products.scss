@@ -1,6 +1,9 @@
 html {
-  background-color: blueviolet;
-  color: orange;
+  color: black;
+}
+
+body{
+  margin: 0;
 }
 
 #product-wrapper{
@@ -15,7 +18,8 @@ html {
     align-items: center;
     width: 85%;
     background-color: white;
-    color: black;
+    border-radius: 5px;
+    border: 1.5px solid gray;
 
     .game-name{
       font-weight: bold;
@@ -34,6 +38,7 @@ html {
 
 //Footer SH
 footer {
+  background-color: black;
   display: flex;
   color: white;
   justify-content: center;
