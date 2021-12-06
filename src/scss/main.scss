@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap");
 
-$blue: #5E7E9B;
-$gray: #E5E5E5;
-
+$blue: #5e7e9b;
+$gray: #e5e5e5;
 
 html {
     background-color: $gray;
-    font-family: 'Oxygen', sans-serif;
-     background-color: white;
+    font-family: "Oxygen", sans-serif;
+    background-color: white;
     body {
         margin: 0;
     }
-
 }
 
 #log {
@@ -156,6 +154,40 @@ html {
     border-radius: 10px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+
+footer {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20%;
+    background-color: #5e7e9b;
+
+    .footer-menu {
+        padding: 0;
+    }
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        text-align: center;
+        line-height: 2;
+        &:hover {
+            color: black;
+        }
+    }
+}
+.media {
+    display: flex;
+    justify-content: center;
+
+    i {
+        padding: 15%;
+    }
 }
 
 @media screen and (min-width: 720px) {
