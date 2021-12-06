@@ -1,3 +1,7 @@
 window.onload = function () {
-    console.log("Hej");
+    document.getElementById("log").addEventListener("click", logToHome);
 };
+
+function logToHome() {
+    location.href = "http://localhost:1234/index.html";
+}
