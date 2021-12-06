@@ -38,6 +38,7 @@ function createHTML(){
 
         prodName.innerHTML = product.name;
         prodImage.src = product.image;
+        //prodImage.src = new URL('../../assets/monopol.jpg', import.meta.url);
         prodImage.alt = product.name;
         prodDes.innerHTML = product.description;
 
