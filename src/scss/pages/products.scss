@@ -28,6 +28,10 @@ body{
     .game-img-wrapper{
       width: 80%;
       height: 300px; //provisorisk innan bilder är placerade
+
+      img{
+        width: 100%;
+      }
     }
 
     .game-description{
