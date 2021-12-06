@@ -38,6 +38,7 @@ function createHTML(){
 
         prodName.innerHTML = product.name;
         prodImage.src = product.image;
+        prodImage.alt = product.name;
         prodDes.innerHTML = product.description;
 
         imageWrapper.appendChild(prodImage);
