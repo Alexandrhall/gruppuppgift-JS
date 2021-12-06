@@ -13,13 +13,17 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 350px;
-    height: 370px;
+    width: 85%;
     background-color: white;
     color: black;
 
     .game-name{
       font-weight: bold;
+    }
+
+    .game-img-wrapper{
+      width: 80%;
+      height: 300px; //provisorisk innan bilder är placerade
     }
 
     .game-description{
