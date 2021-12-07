@@ -1,3 +1,63 @@
 html {
-    background-color: red;
+  background-color: red;
+}
+
+.wrapper {
+  background-color: rgb(186, 235, 236);
+  width: 50%;
+  padding: 25px;
+  margin: 25px auto 0;
+  box-shadow: 0px 0px 20px black;
+  border-radius: 10px;
+}
+.wrapper h2 {
+  background-color: blanchedalmond;
+  color: rgb(93, 138, 139);
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  border: 3px dashed rgb(93, 138, 139);
+}
+.wrapper h4 {
+  margin-bottom: 5px;
+  color: rgb(93, 138, 139);
+}
+.input_group {
+  margin-bottom: 8px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+}
+.input_box {
+  width: 100%;
+  margin: 12px;
+  position: relative;
+  .name {
+    padding: 14px 10px 14px 50px;
+    width: 75%;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+  }
+  .icon {
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    top: 0px;
+    color: rgb(92, 92, 92);
+    background-color: rgb(132, 192, 194);
+    border-radius: 2px 0 0 2px;
+    font-size: 20px;
+    border: 1px solid black;
+  }
 }

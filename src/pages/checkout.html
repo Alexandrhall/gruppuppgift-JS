@@ -1,14 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link href="../scss/pages/checkout.scss" rel="stylesheet" />
-        <script type="module" src="../ts/pages/checkout.ts"></script>
-    </head>
-    <body>
-        <h1>Hej Här har vi kassan</h1>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../scss/pages/checkout.scss" rel="stylesheet" />
+    <script type="module" src="../ts/pages/checkout.ts"></script>
+    <!-- font awsome link SH -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+     <div class="container">
+    <h2>Checkout</h2>
+    
+      <h4 class="mb-3">Billing address</h4>
+     
+      <form novalidate>
+      <div class="row">
+      <div class="colm-6">
+      <label for="firstName" class="form-label">First Name</label>
+      <input id="firstName" type="text" class="form-control" placeholder="Simon" required/>
+      <div class="invalid-feedback">
+        Valid first name is required.
+      </div>
+      </div>
+      
+
+      <div class="colm-6">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input id="lastName" type="text" class="form-control" placeholder="Halvorsen" required/>
+      <div class="invalid-feedback">
+        Valid Last name is required.
+      </div>
+      </div>
+      </div>
+      
+
+       <div class="colm-12">
+      <label for="email" class="form-label">Email</label>
+      <div class="input-group">
+        <span
+        class="input-group-text">@</span>
+
+      <input id="email" type="text" class="form-control" placeholder="Email" required/>
+      <div class="invalid-feedback">
+        Valid Email is required.
+      </div>
+      </div>
+      </div>
+      <div class="colm-6">
+      <label for="address" class="form-label">Address</label>
+      <input id="address" type="text" class="form-control" placeholder="Lunda 24" required/>
+      <div class="invalid-feedback">
+        Valid Address is required.
+      </div>
+      </div>
+      <div class="colm-6">
+      <label for="city" class="form-label">City</label>
+      <input id="city" type="text" class="form-control" placeholder="Stockholm" required/>
+      <div class="invalid-feedback">
+        Valid city is required.
+      </div>
+      </div>
+      <h3>Betalning</h3>
+      <i class="fa fa-cc-visa" style="color: navy"></i>
+      <i class="fa fa-cc-amex" style="color: blue"></i>
+      <i class="fa fa-cc-mastercard" style="color: red"></i>
+      <i class="fa fa-cc-discover" style="color: orange"></i>
+
+      <div class="colm-6">
+      <label for="Name" class="form-label">Name</label>
+      <input id="Name" type="text" class="form-control" placeholder="Simon*" required/>
+      <div class="invalid-feedback">
+        Validname is required.
+      </div>
+      </div>
+      
+      </div>
+      
+      
+     </form>
+    <!-- <div class="wrapper">
+      <h2>Formulär</h2>
+      <form action="" method="post">
+        <h4>Konto</h4>
+        <div class="input_group">
+          <div class="input_box">
+            <input
+              type="text"
+              placeholder="Namn"
+              pattern="[A-Za-Z]{100}"
+              class="name"
+            />
+            <i class="fa fa-user icon"></i>
+          </div>
+        </div>
+
+        <div class="input_group">
+          <div class="input_box">
+            <input
+              type="text"
+              placeholder="Adress"
+              pattern="[A-Za-z0-9]+"
+              class="name"
+            />
+            <i class="fa fa-map-marker icon"></i>
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input type="text" placeholder="Stad" required class="name" />
+            <i class="fa fa-institution icon"></i>
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input
+              type="email"
+              placeholder="Mail"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              class="name"
+            />
+            <i class="fa fa-envelope icon"></i>
+          </div>
+        </div>
+        <h4>Betalning metod</h4>
+        <div class="input_group">
+          <input type="radio" name="pay" class="radio" id="bc1" checked />
+
+          <div class="icon-container">
+            <i class="fa fa-cc-visa" style="color: navy"></i>
+            <i class="fa fa-cc-amex" style="color: blue"></i>
+            <i class="fa fa-cc-mastercard" style="color: red"></i>
+            <i class="fa fa-cc-discover" style="color: orange"></i>
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input type="text" placeholder="Kort namn" required class="name" />
+            <i class="fa fa-user icon"></i>
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input
+              type="tel"
+              placeholder="Kort nummer 1111-2222-3333-4444"
+              required
+              class="name"
+            />
+            <i class="fa fa-credit-card icon"></i>
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input type="tel" placeholder="CVC 123" required class="name" />
+            <i class="fa fa-user icon"></i>
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input type="number" placeholder="MM/YY" required class="name" />
+            <i class="fa fa-calendar icon"></i>
+          </div>
+        </div>
+
+        <div class="input_group">
+          <div class="input_box">
+            <button>Betala</button>
+          </div>
+        </div>
+      </form>
+    </div> -->
+  </body>
 </html>
