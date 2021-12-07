@@ -11,29 +11,44 @@ body{
 
 #product-wrapper{
   @include mixins.flex-col;
-  row-gap: 10px;
+  row-gap: 40px;
+  column-gap: 20px;
+
+  @include mixins.tablets-only{
+    flex-direction: row;
+    width: 90%;
+    flex-wrap: wrap;
+    column-gap: 50px;
+  }
 
   @include mixins.desktop-only{
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
+    row-gap: 30px;
     width: 80%;
     max-width: 1000px;
   }
 
   .game-div{
     @include mixins.flex-col;
-    width: 85%;
     background-color: white;
+    width: 85%;
     border-radius: 5px;
-    border: 1.5px solid gray;
+    row-gap: 10px;
+
+    @include mixins.tablets-only{
+      width: 300px;
+    }
 
     @include mixins.desktop-only{
       width: 200px;
     }
 
+
+
+
     .game-name{
       font-weight: bold;
+      margin: 0;
     }
 
     .game-img-wrapper{
@@ -52,20 +67,14 @@ body{
       }
     }
 
-    .buy-div{
-      display: flex;
-      column-gap: 20px;
-      align-items: center;
-      margin: 10px;
+    .price{
+      font-size: 14pt;
+    }
 
-      .price{
-        font-size: 20pt;
-      }
-  
-      .buy-button{
-        @include mixins.button;
-        height: 38px;
-      }
+    .buy-button{
+      @include mixins.button;
+      height: 38px;
+      width: 100%;
     }
   }
 }
