@@ -133,6 +133,8 @@ function createHTML() {
         prodImage.src = product.image;
         prodDes.innerHTML = product.description;
 
+        prodDiv.addEventListener("click", clickOnProd);
+
         imageWrapper.appendChild(prodImage);
         prodDiv.appendChild(prodName);
         prodDiv.appendChild(imageWrapper);
@@ -140,4 +142,8 @@ function createHTML() {
 
         document.getElementById("product-wrapper").appendChild(prodDiv);
     }
+}
+
+function clickOnProd(e) {
+    console.log(e.path);
 }
