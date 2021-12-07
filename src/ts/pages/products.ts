@@ -41,15 +41,19 @@ function createHTML(){
         //Skapar nya element och ger dom klasser
         let prodDiv:HTMLDivElement = document.createElement("div");
         prodDiv.className = "game-div"
-        let prodName:HTMLSpanElement = document.createElement("span");
+        let prodName:HTMLHeadingElement = document.createElement("h3");
         prodName.className = "game-name";
-        let buyButton:HTMLButtonElement = document.createElement("button");
-        buyButton.className = "buy-button";
         let prodImage:HTMLImageElement = document.createElement("img");
         let imageWrapper:HTMLDivElement = document.createElement("div");
         imageWrapper.className = "game-img-wrapper";
         let prodDes:HTMLParagraphElement = document.createElement("p");
         prodDes.className = "game-description";
+        let prodPrice:HTMLSpanElement = document.createElement("span");
+        prodPrice.className = "price";
+        let buyButton:HTMLButtonElement = document.createElement("button");
+        buyButton.className = "buy-button";
+        let buyDiv:HTMLDivElement = document.createElement("div");
+        buyDiv.className = "buy-div";
 
         //Sätter olika egenskaper på elementen
         prodName.innerHTML = product.name;
@@ -57,12 +61,17 @@ function createHTML(){
         //prodImage.src = new URL('../../assets/monopol.jpg', import.meta.url);
         prodImage.alt = product.name;
         prodDes.innerHTML = product.description;
+        buyButton.innerHTML = "Lägg i varukorgen";
+        prodPrice.innerHTML = product.price.toString() + ":-";
 
         //Lägger till elementen till en förälder
         imageWrapper.appendChild(prodImage);
         prodDiv.appendChild(prodName);
         prodDiv.appendChild(imageWrapper);
         prodDiv.appendChild(prodDes);
+        prodDiv.appendChild(buyDiv);
+        buyDiv.appendChild(prodPrice);
+        buyDiv.appendChild(buyButton);
 
         document.getElementById("product-wrapper").appendChild(prodDiv);
         

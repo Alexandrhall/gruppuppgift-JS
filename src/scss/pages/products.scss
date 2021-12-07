@@ -26,8 +26,7 @@ body{
     }
 
     .game-img-wrapper{
-      width: 300px;
-      height: 300px; //provisorisk innan bilder är placerade
+      width: 80%;
 
       img{
         width: 100%;
@@ -36,6 +35,20 @@ body{
 
     .game-description{
       width: 90%;
+    }
+
+    .buy-div{
+      display: flex;
+      column-gap: 20px;
+      align-items: center;
+
+      .price{
+        font-size: 20pt;
+      }
+  
+      .buy-button{
+        height: 38px;
+      }
     }
   }
 }
