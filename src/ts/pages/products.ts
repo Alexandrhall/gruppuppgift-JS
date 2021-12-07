@@ -1,6 +1,6 @@
 import { Game } from "../pages/models/Game";
 
-import monopol from "../../assets/monopol.jpg";
+import monopol from "../../assets/monopoly.jpg";
 import schack from "../../assets/schack.jpeg";
 import fia from "../../assets/fia.jpeg";
 import uno from "../../assets/uno.jpeg";
@@ -14,7 +14,7 @@ import yatzy from "../../assets/yatzy.jpeg";
 import trivial from "../../assets/trivial.jpeg";
 import rappakalja from "../../assets/rappakalja.jpeg";
 
-let gameOne:Game = new Game("Monopol", 349, monopol, "Förflytta spelpjäsen runt spelplanen och köp och sälj tomter, bygg hus och hotell. Det handlar om att snabbt bygga upp en förmögenhet tills du äger allt!", "family");
+let gameOne:Game = new Game("Monopol", 349, monopol, "Förflytta spelpjäsen runt spelplanen och köp och sälj tomter, bygg hus och hotell.", "family");
 let gameTwo:Game = new Game("Schack", 199, schack, "Ett logikspel för två. Ett väldigt fint schackbräde, helt i trä. Al, tysklönn samt med inlägg av betsat poppelträ som liknar sapele.", "family");
 let gameThree:Game = new Game("Fia med knuff", 149, fia, "Ett ihopfällbart fia med knuff-spel för mellan 2-4 spelare. ", "family");
 let gameFour:Game = new Game("Uno", 149, uno, "Skynda dig att bli av med alla dina kort. Använd händelsekorten mot dina motspelare. När du bara har ett kort kvar, måste du ropa uno!", "family");
@@ -26,7 +26,7 @@ let gameNine:Game = new Game("Othello", 149, othello, "Alla förstår spelet på
 let gameTen:Game = new Game("Kalaha", 149, kalaha, "Den som får flest kulor i sin poängskål vinner!", "family");
 let gameEleven:Game = new Game("Yatzy", 149, yatzy, "Yatzy är ett tärningsspel med 5 tärningar som uppfanns på 1950-talet. ", "family");
 let gameTwelve:Game = new Game("Trivial pursuit", 149, trivial, "Klassiskt spel på klassisk spelplan.", "family");
-let gameThirteen:Game = new Game("Rappakalja", 149, rappakalja, "Originalversionen av ett av världens populäraste spel! Du ska hitta på fantastiska men samtidigt trovärdiga förklaringar till vansinniga men ändå genuina svenska ord.", "family");
+let gameThirteen:Game = new Game("Rappakalja", 149, rappakalja, "Du ska hitta på fantastiska men samtidigt trovärdiga förklaringar till vansinniga men ändå genuina svenska ord.", "family");
 let gameList:Game[] = [gameOne, gameTwo, gameThree, gameFour, gameFive, gameSix, gameSeven, gameEight, gameNine, gameTen, gameEleven, gameTwelve, gameThirteen];
 
 window.onload = function () {
