@@ -119,6 +119,7 @@ function createHTML() {
         let product = gameList[i];
 
         let prodDiv: HTMLDivElement = document.createElement("div");
+        prodDiv.className = "prodlist";
         let prodName: HTMLSpanElement = document.createElement("span");
         prodName.className = "gameName";
 
@@ -133,7 +134,9 @@ function createHTML() {
         prodImage.src = product.image;
         prodDes.innerHTML = product.description;
 
-        prodDiv.addEventListener("click", clickOnProd);
+        prodDiv.addEventListener("click", () => {
+            clickOnProd(gameList[i]);
+        });
 
         imageWrapper.appendChild(prodImage);
         prodDiv.appendChild(prodName);
@@ -145,5 +148,6 @@ function createHTML() {
 }
 
 function clickOnProd(e) {
-    console.log(e.path);
+    sessionStorage.setItem("game", JSON.stringify(e));
+    location.href = "http://localhost:1234/pages/productinfo.html";
 }
