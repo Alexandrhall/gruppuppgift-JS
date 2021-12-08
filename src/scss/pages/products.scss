@@ -12,6 +12,13 @@ body {
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    
+    button{
+        width: 120px;
+        color: black;
+        background-color: white;
+        border: 0;
+    }
 }
 
 #product-wrapper {
