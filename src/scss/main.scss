@@ -7,6 +7,7 @@ html {
     background-color: $gray;
     font-family: "Oxygen", sans-serif;
     background-color: white;
+    scroll-behavior: smooth;
     body {
         margin: 0;
     }
@@ -124,7 +125,7 @@ html {
     text-align: center;
     height: 0px;
     overflow: hidden;
-    z-index: 120;
+    z-index: 1;
     transition: all 0.3s ease;
     a {
         text-decoration: none;

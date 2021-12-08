@@ -8,7 +8,6 @@
         <link href="../scss/pages/productinfo.scss" rel="stylesheet" />
         <link href="../scss/main.scss" rel="stylesheet" />
         <script type="module" src="../ts/pages/productinfo.ts"></script>
-        <script type="module" src="../ts/main.ts"></script>
         <script
             src="https://kit.fontawesome.com/9604976d4b.js"
             crossorigin="anonymous"
@@ -41,18 +40,23 @@
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </a>
         </header>
-        <div class="prodCat">
-            <span class="prodSort">Alla Spel</span>
-            <span class="prodSort">Brädspel</span>
-            <span class="prodSort">Kortspel</span>
-            <span class="prodSort">Familjespel</span>
-        </div>
-        <h1>Hej Här har vi info om en produkt</h1>
+        <main>
+                <div class="prodCat">
+                    <span class="prodSort">Alla Spel</span>
+                    <span class="prodSort">Brädspel</span>
+                    <span class="prodSort">Kortspel</span>
+                    <span class="prodSort">Familjespel</span>
+                </div>
+                    <div class="productWrap">
+                    <div class="productInfo" id="prodInfo"></div>
+                    <div class="productBut"></div>
+                </div>
+        </main>
         <footer>
             <div class="footer-menu">
-               <ul>
-                   <li>Alla Spel</li>
-                   <li>Brädspel</li>
+                <ul>
+                    <li>Alla Spel</li>
+                    <li>Brädspel</li>
                    <li>Kortspel</li>
                    <li>Familjespel</li>
                </ul>
@@ -76,5 +80,7 @@
        </i>
        </div>
    </footer>
+   <div id="hide">
+   </div>
     </body>
 </html>
