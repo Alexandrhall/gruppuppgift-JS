@@ -14,33 +14,34 @@
     />
   </head>
   <body>
-    <form>
+    <form class="needs-validation" novalidate>
       <div class="container">
         <div class="row">
-          <div class="col" style="border: 1px solid red">
-            <label for="firstName" class="form-label">First Name</label>
+          <div class="col-md-6 col-sm-12">
+            <label for="firstName" class="form-label">Förnamn</label>
             <input
               id="firstName"
               type="text"
               class="form-control"
-              placeholder="Simon"
+              placeholder="Janne*"
               required
             />
             <div class="invalid-feedback">Valid first name is required.</div>
           </div>
-          <div class="col" style="border: 1px solid red">
-            <label for="lastName" class="form-label">Last Name</label>
+
+          <div class="col">
+            <label for="lastName" class="form-label">Efternamn</label>
             <input
               id="lastName"
               type="text"
               class="form-control"
-              placeholder="Halvorsen"
+              placeholder="Pettersson*"
               required
             />
           </div>
         </div>
         <div class="row">
-          <div class="col" style="border: 1px solid red">
+          <div class="col">
             <label for="email" class="form-label">Email</label>
             <div class="input-group">
               <span class="input-group-text">@</span>
@@ -49,7 +50,7 @@
                 id="email"
                 type="text"
                 class="form-control"
-                placeholder="Email"
+                placeholder="Email*"
                 required
               />
               <div class="invalid-feedback">Valid Email is required.</div>
@@ -57,24 +58,24 @@
           </div>
         </div>
         <div class="row">
-          <div class="col" style="border: 1px solid red">
-            <label for="address" class="form-label">Address</label>
+          <div class="col-md-6 col-sm-12">
+            <label for="address" class="form-label">Adress</label>
             <input
               id="address"
               type="text"
               class="form-control"
-              placeholder="Lunda 24"
+              placeholder="Lunda 24*"
               required
             />
             <div class="invalid-feedback">Valid Address is required.</div>
           </div>
-          <div class="col" style="border: 1px solid red">
-            <label for="city" class="form-label">City</label>
+          <div class="col">
+            <label for="city" class="form-label">Stad</label>
             <input
               id="city"
               type="text"
               class="form-control"
-              placeholder="Stockholm"
+              placeholder="Stockholm*"
               required
             />
             <div class="invalid-feedback">Valid city is required.</div>
@@ -85,48 +86,77 @@
           <h3>Betalning</h3>
         </div>
         <div class="row justify-content-center">
-          <i class="fa fa-cc-visa" style="color: navy"></i>
-          <i class="fa fa-cc-amex" style="color: blue"></i>
-          <i class="fa fa-cc-mastercard" style="color: red"></i>
-          <i class="fa fa-cc-discover" style="color: orange"></i>
+          <i class="fa fa-cc-visa fa-2x" style="color: navy"></i>
+          <i class="fa fa-cc-amex fa-2x" style="color: blue"></i>
+          <i class="fa fa-cc-mastercard fa-2x" style="color: red"></i>
+          <i class="fa fa-cc-discover fa-2x" style="color: orange"></i>
         </div>
 
         <div class="row">
-          <div class="col" style="border: 1px solid red">
-            <label for="firstName" class="form-label">First Name</label>
+          <div class="col-md-6 col-sm-12">
+            <label for="firstName" class="form-label">Namn</label>
             <input
-              id="firstName"
+              id="Name"
               type="text"
               class="form-control"
-              placeholder="Simon"
+              placeholder="Janne*"
               required
             />
             <div class="invalid-feedback">Valid first name is required.</div>
           </div>
-          <div class="col" style="border: 1px solid red">
-            <label for="firstName" class="form-label">First Name</label>
+          <div class="col">
+            <label for="firstName" class="form-label">kort nummer</label>
             <input
-              id="firstName"
+              id="card"
               type="text"
               class="form-control"
-              placeholder="Simon"
+              placeholder="1111-2222-3333-4444*"
               required
             />
             <div class="invalid-feedback">Valid first name is required.</div>
-            kort nummer
           </div>
         </div>
 
         <div class="row">
-          <div class="col" style="border: 1px solid red">månad</div>
-          <div class="col" style="border: 1px solid red">år</div>
+          <div class="col-md-6 col-sm-12">
+            <label for="firstName" class="form-label"> Månad</label>
+            <input
+              id="month"
+              type="text"
+              class="form-control"
+              placeholder="Exp month*"
+              required
+            />
+            <div class="invalid-feedback">Valid first name is required.</div>
+          </div>
+          <div class="col">
+            <label for="firstName" class="form-label">År</label>
+            <input
+              id="year"
+              type="text"
+              class="form-control"
+              placeholder="Exp year*"
+              required
+            />
+            <div class="invalid-feedback">Valid first name is required.</div>
+          </div>
         </div>
         <div class="row">
-          <div class="col" style="border: 1px solid red">cvv</div>
+          <div class="col-3">
+            <label for="firstName" class="form-label">Cvv</label>
+            <input
+              id="cvv"
+              type="text"
+              class="form-control"
+              placeholder="123*"
+              required
+            />
+            <div class="invalid-feedback">Valid first name is required.</div>
+          </div>
         </div>
 
-        <div class="row">
-          <button>knapp</button>
+        <div class="row justify-content-md-center">
+          <button clas="btn" type="submit">knapp</button>
         </div>
       </div>
     </form>
@@ -294,6 +324,7 @@
         </div>
       </form>
     </div> -->
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
