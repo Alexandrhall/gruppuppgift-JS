@@ -13,7 +13,7 @@ let gameTwo: Game = new Game(
     199,
     "https://schackshoppen.se/images/508-Skaks%C3%A6t%20i%20tr%C3%A6-p.jpg",
     "Ett logikspel för två. Ett väldigt fint schackbräde, helt i trä. Al, tysklönn samt med inlägg av betsat poppelträ som liknar sapele.",
-    "family"
+    "board"
 );
 let gameThree: Game = new Game(
     "Fia med knuff",
@@ -27,14 +27,14 @@ let gameFour: Game = new Game(
     149,
     "https://cdn.cdon.com/media-dynamic/images/product/cloud/store/CardGames/000/066/049/018/66049018-119941396-11453-org.jpg?cache=132572556568618987&impolicy=product&imwidth=600",
     "Skynda dig att bli av med alla dina kort. Använd händelsekorten mot dina motspelare. När du bara har ett kort kvar, måste du ropa uno!",
-    "family"
+    "card"
 );
 let gameFive: Game = new Game(
     "Ticket to ride",
     149,
     "https://www.spelexperten.com/bilder/artiklar/zoom/DOW7202S_1.jpg?m=1637219327",
     "Ticket to Ride: Europe är ett brädspel där varje spelare ska bygga ett nätverk av järnvägsspår.",
-    "family"
+    "board"
 );
 let gameSix: Game = new Game(
     "Med andra ord",
@@ -48,7 +48,7 @@ let gameSeven: Game = new Game(
     149,
     "https://www.spelexperten.com/bilder/artiklar/zoom/30166_1.jpg?m=1637219325",
     "Rackare är ett löjligt enkelt festspel, till den grad att endast puckon kan missuppfatta reglerna.",
-    "family"
+    "card"
 );
 let gameEight: Game = new Game(
     "Alias",
@@ -62,14 +62,14 @@ let gameNine: Game = new Game(
     149,
     "https://img.fruugo.com/product/2/50/166667502_max.jpg",
     "Alla förstår spelet på en minut, men det tar en livstid att bemästra de taktiska finesserna.",
-    "family"
+    "board"
 );
 let gameTen: Game = new Game(
     "Kalaha",
     149,
     "https://www.spelexperten.com/bilder/artiklar/zoom/3127_1.jpg?m=1637219325",
     "Den som får flest kulor i sin poängskål vinner!",
-    "family"
+    "board"
 );
 let gameEleven: Game = new Game(
     "Yatzy",
@@ -110,51 +110,74 @@ let gameList: Game[] = [
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
-    console.log(gameList);
-    createHTML();
+    
+    document.getElementById("catAll").addEventListener("click", showAllCategories);
+    document.getElementById("catBoard").addEventListener("click", () => {
+        chooseCategory("board");
+    });
+    document.getElementById("catCard").addEventListener("click", () => {
+        chooseCategory("card");
+    });
+    document.getElementById("catFamily").addEventListener("click", () => {
+        chooseCategory("family");
+    });
+
+    showAllCategories();
 };
 
-function createHTML() {
+function showAllCategories() {
+    document.getElementById("product-wrapper").innerHTML="";
     for (let i = 0; i < gameList.length; i++) {
-        let product = gameList[i];
-
-        //Skapar nya element och ger dom klasser
-        let prodDiv: HTMLDivElement = document.createElement("div");
-        prodDiv.className = "game-div";
-        let prodName: HTMLHeadingElement = document.createElement("h3");
-        prodName.className = "game-name";
-        let prodImage: HTMLImageElement = document.createElement("img");
-        let imageWrapper: HTMLDivElement = document.createElement("div");
-        imageWrapper.className = "game-img-wrapper";
-        let prodPrice: HTMLSpanElement = document.createElement("span");
-        prodPrice.className = "price";
-        let buyButton: HTMLButtonElement = document.createElement("button");
-        buyButton.className = "buy-button";
-        let infoDiv: HTMLDivElement = document.createElement("div");
-        infoDiv.className = "buy-div";
-
-        //Sätter olika egenskaper på elementen
-        prodName.innerHTML = product.name;
-        prodImage.src = product.image;
-        //prodImage.src = new URL('../../assets/monopol.jpg', import.meta.url);
-        prodImage.alt = product.name;
-        //prodDes.innerHTML = product.description;
-        buyButton.innerHTML = "Lägg i varukorgen";
-        prodPrice.innerHTML = product.price.toString() + ":-";
-
-        prodDiv.addEventListener("click", () => {
-            clickOnProd(gameList[i]);
-        });
-
-        //Lägger till elementen till en förälder
-        imageWrapper.appendChild(prodImage);
-        prodDiv.appendChild(imageWrapper);
-        prodDiv.appendChild(prodName);
-        prodDiv.appendChild(prodPrice);
-        prodDiv.appendChild(buyButton);
-
-        document.getElementById("product-wrapper").appendChild(prodDiv);
+        createHTML(i);
     }
+}
+
+function chooseCategory(e:string){
+    document.getElementById("product-wrapper").innerHTML="";
+    for (let i = 0; i < gameList.length; i++) {
+        if(gameList[i].category == e){
+            createHTML(i);
+        }
+    }
+}
+
+function createHTML(i:number){
+    let product = gameList[i];
+
+    //Skapar nya element och ger dom klasser
+    let prodDiv: HTMLDivElement = document.createElement("div");
+    prodDiv.className = "game-div";
+    let prodName: HTMLHeadingElement = document.createElement("h3");
+    prodName.className = "game-name";
+    let prodImage: HTMLImageElement = document.createElement("img");
+    let imageWrapper: HTMLDivElement = document.createElement("div");
+    imageWrapper.className = "game-img-wrapper";
+    let prodPrice: HTMLSpanElement = document.createElement("span");
+    prodPrice.className = "price";
+    let buyButton: HTMLButtonElement = document.createElement("button");
+    buyButton.className = "buy-button";
+    let infoDiv: HTMLDivElement = document.createElement("div");
+    infoDiv.className = "buy-div";
+
+    //Sätter olika egenskaper på elementen
+    prodName.innerHTML = product.name;
+    prodImage.src = product.image;
+    prodImage.alt = product.name;
+    buyButton.innerHTML = "Lägg i varukorgen";
+    prodPrice.innerHTML = product.price.toString() + ":-";
+
+    prodDiv.addEventListener("click", () => {
+        clickOnProd(gameList[i]);
+    });
+
+    //Lägger till elementen till en förälder
+    imageWrapper.appendChild(prodImage);
+    prodDiv.appendChild(imageWrapper);
+    prodDiv.appendChild(prodName);
+    prodDiv.appendChild(prodPrice);
+    prodDiv.appendChild(buyButton);
+
+    document.getElementById("product-wrapper").appendChild(prodDiv);
 }
 
 function clickOnProd(e) {
