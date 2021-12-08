@@ -4,91 +4,91 @@ import { logToHome } from "../main";
 let gameOne: Game = new Game(
     "Monopol",
     349,
-    "../assets/monopol.jpg",
+    "https://media.storochliten.se/product-images/XL/hasbro-monopol_54185-0.jpg",
     "Kasta dig ut i den spännande fastighetsbranschen och gör snabba klipp. Förflytta spelpjäsen runt spelplanen och köp och sälj tomter, bygg hus och hotell. Det handlar om stora pengar och om att snabbt bygga upp en förmögenhet tills du äger allt!",
     "family"
 );
 let gameTwo: Game = new Game(
     "Schack",
     199,
-    "../assets/schack.jpeg",
+    "https://schackshoppen.se/images/508-Skaks%C3%A6t%20i%20tr%C3%A6-p.jpg",
     "Ett logikspel för två. Ett väldigt fint schackbräde, helt i trä. Al, tysklönn samt med inlägg av betsat poppelträ som liknar sapele.",
     "family"
 );
 let gameThree: Game = new Game(
     "Fia med knuff",
     149,
-    "../assets/fia.jpeg",
+    "https://cdn.cdon.com/media-dynamic/images/product/cloud/store/SpecialDecorations/000/075/228/067/75228067-135496338-11453-org.jpg?cache=132661784599800444&impolicy=product&imwidth=600",
     "Ett ihopfällbart fia med knuff-spel för mellan 2-4 spelare. ",
     "family"
 );
 let gameFour: Game = new Game(
     "Uno",
     149,
-    "../assets/uno.jpeg",
+    "https://cdn.cdon.com/media-dynamic/images/product/cloud/store/CardGames/000/066/049/018/66049018-119941396-11453-org.jpg?cache=132572556568618987&impolicy=product&imwidth=600",
     "Skynda dig att bli av med alla dina kort. Använd händelsekorten mot dina motspelare. När du bara har ett kort kvar, måste du ropa uno!",
     "family"
 );
 let gameFive: Game = new Game(
     "Ticket to ride",
     149,
-    "../assets/ticket-to-ride.jpeg",
+    "https://www.spelexperten.com/bilder/artiklar/zoom/DOW7202S_1.jpg?m=1637219327",
     "Ticket to Ride: Europe är ett brädspel där varje spelare ska bygga ett nätverk av järnvägsspår.",
     "family"
 );
 let gameSix: Game = new Game(
     "Med andra ord",
     149,
-    "../assets/andraord.jpeg",
+    "https://www.spelexperten.com/bilder/artiklar/zoom/1-38020-222_1.jpg?m=1637219324",
     "Beskriv samma sak, med andra ord. Under tidspress!",
     "family"
 );
 let gameSeven: Game = new Game(
     "Rackare",
     149,
-    "../assets/rackare.jpeg",
+    "https://www.spelexperten.com/bilder/artiklar/zoom/30166_1.jpg?m=1637219325",
     "Rackare är ett löjligt enkelt festspel, till den grad att endast puckon kan missuppfatta reglerna.",
     "family"
 );
 let gameEight: Game = new Game(
     "Alias",
     149,
-    "../assets/alias.jpeg",
+    "https://www.spelexperten.com/bilder/artiklar/zoom/2129_1.jpg?m=1637219324",
     "Ett ordförklaringsspel för vuxna som spelas i tvåmannalag. Spelet går ut på att förklara ord.",
     "family"
 );
 let gameNine: Game = new Game(
     "Othello",
     149,
-    "../assets/othello.jpg",
+    "https://img.fruugo.com/product/2/50/166667502_max.jpg",
     "Alla förstår spelet på en minut, men det tar en livstid att bemästra de taktiska finesserna.",
     "family"
 );
 let gameTen: Game = new Game(
     "Kalaha",
     149,
-    "../assets/kalaha.jpeg",
+    "https://www.spelexperten.com/bilder/artiklar/zoom/3127_1.jpg?m=1637219325",
     "Den som får flest kulor i sin poängskål vinner!",
     "family"
 );
 let gameEleven: Game = new Game(
     "Yatzy",
     149,
-    "../assets/yatzy.jpeg",
+    "https://www.partyhallen.se/cache/1b/799x799-b_klassiskt-yatzy-spel-1.jpg",
     "Yatzy är ett tärningsspel med 5 tärningar som uppfanns på 1950-talet. ",
     "family"
 );
 let gameTwelve: Game = new Game(
     "Trivial pursuit",
     149,
-    "../assets/trivial.jpeg",
+    "https://media.babyland.se/product-images/XL/hasbro-trivial-pursuit-classic-edition_54191-2.jpg",
     "Klassiskt spel på klassisk spelplan.",
     "family"
 );
 let gameThirteen: Game = new Game(
     "Rappakalja",
     149,
-    "../assets/rappakalja.jpeg",
+    "https://www.spelexperten.com/bilder/artiklar/zoom/53255_1.jpg?m=1637219325",
     "Originalversionen av ett av världens populäraste spel! Du ska hitta på fantastiska men samtidigt trovärdiga förklaringar till vansinniga men ändå genuina svenska ord.",
     "family"
 );
