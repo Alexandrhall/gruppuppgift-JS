@@ -1,81 +1,77 @@
 @use "mixins";
 
 html {
-  color: black;
+    color: black;
 }
 
-body{
-  margin: 0;
-  @include mixins.flex-col;
+body {
+    margin: 0;
 }
 
-#product-wrapper{
-  @include mixins.flex-col;
-  row-gap: 40px;
-  column-gap: 20px;
-
-  @include mixins.tablets-only{
-    flex-direction: row;
-    width: 90%;
-    flex-wrap: wrap;
-    column-gap: 50px;
-  }
-
-  @include mixins.desktop-only{
-    justify-content: space-around;
-    row-gap: 30px;
-    width: 80%;
-    max-width: 1000px;
-  }
-
-  .game-div{
+#product-wrapper {
     @include mixins.flex-col;
-    background-color: white;
-    width: 85%;
-    border-radius: 5px;
-    row-gap: 10px;
+    margin: 0 auto;
+    row-gap: 40px;
+    column-gap: 20px;
 
-    @include mixins.tablets-only{
-      width: 300px;
+    @include mixins.tablets-only {
+        flex-direction: row;
+        width: 90%;
+        flex-wrap: wrap;
+        column-gap: 50px;
     }
 
-    @include mixins.desktop-only{
-      width: 200px;
+    @include mixins.desktop-only {
+        justify-content: space-around;
+        row-gap: 30px;
+        width: 80%;
+        max-width: 1000px;
     }
 
+    .game-div {
+        @include mixins.flex-col;
+        background-color: white;
+        width: 85%;
+        border-radius: 5px;
+        row-gap: 10px;
 
+        @include mixins.tablets-only {
+            width: 300px;
+        }
 
+        @include mixins.desktop-only {
+            width: 200px;
+        }
 
-    .game-name{
-      font-weight: bold;
-      margin: 0;
+        .game-name {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .game-img-wrapper {
+            width: 80%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .game-description {
+            width: 90%;
+
+            @include mixins.desktop-only {
+                height: 80px;
+            }
+        }
+
+        .price {
+            font-size: 14pt;
+        }
+
+        .buy-button {
+            @include mixins.button;
+            height: 38px;
+            width: 100%;
+        }
     }
-
-    .game-img-wrapper{
-      width: 80%;
-
-      img{
-        width: 100%;
-      }
-    }
-
-    .game-description{
-      width: 90%;
-
-      @include mixins.desktop-only{
-        height: 80px;
-      }
-    }
-
-    .price{
-      font-size: 14pt;
-    }
-
-    .buy-button{
-      @include mixins.button;
-      height: 38px;
-      width: 100%;
-    }
-  }
-
 }
