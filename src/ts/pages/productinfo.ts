@@ -17,18 +17,20 @@ function createHTML() {
         "prodInfo"
     ) as HTMLDivElement;
 
-    let span: HTMLSpanElement = document.createElement("span");
+    let name: HTMLSpanElement = document.createElement("h3");
     let img: HTMLImageElement = document.createElement("img");
-    let price: HTMLSpanElement = document.createElement("span");
+    let price: HTMLSpanElement = document.createElement("h3");
     let description: HTMLSpanElement = document.createElement("span");
+    let namePrice: HTMLDivElement = document.createElement("div");
 
-    span.innerHTML = game.name;
+    name.innerHTML = game.name;
     img.src = game.image;
-    price.innerHTML = game.price;
+    price.innerHTML = game.price + ":-";
     description.innerHTML = game.description;
 
-    prodInfo.appendChild(span);
     prodInfo.appendChild(img);
+    namePrice.appendChild(name);
+    namePrice.appendChild(price);
+    prodInfo.appendChild(namePrice);
     prodInfo.appendChild(description);
-    prodInfo.appendChild(price);
 }
