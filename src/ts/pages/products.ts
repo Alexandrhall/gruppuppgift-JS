@@ -4,91 +4,91 @@ import { logToHome } from "../main";
 let gameOne: Game = new Game(
     "Monopol",
     349,
-    "img",
+    "../assets/monopol.jpg",
     "Kasta dig ut i den spännande fastighetsbranschen och gör snabba klipp. Förflytta spelpjäsen runt spelplanen och köp och sälj tomter, bygg hus och hotell. Det handlar om stora pengar och om att snabbt bygga upp en förmögenhet tills du äger allt!",
     "family"
 );
 let gameTwo: Game = new Game(
     "Schack",
     199,
-    "img",
+    "../assets/schack.jpeg",
     "Ett logikspel för två. Ett väldigt fint schackbräde, helt i trä. Al, tysklönn samt med inlägg av betsat poppelträ som liknar sapele.",
     "family"
 );
 let gameThree: Game = new Game(
     "Fia med knuff",
     149,
-    "img",
+    "../assets/fia.jpeg",
     "Ett ihopfällbart fia med knuff-spel för mellan 2-4 spelare. ",
     "family"
 );
 let gameFour: Game = new Game(
     "Uno",
     149,
-    "img",
+    "../assets/uno.jpeg",
     "Skynda dig att bli av med alla dina kort. Använd händelsekorten mot dina motspelare. När du bara har ett kort kvar, måste du ropa uno!",
     "family"
 );
 let gameFive: Game = new Game(
     "Ticket to ride",
     149,
-    "img",
+    "../assets/ticket-to-ride.jpeg",
     "Ticket to Ride: Europe är ett brädspel där varje spelare ska bygga ett nätverk av järnvägsspår.",
     "family"
 );
 let gameSix: Game = new Game(
     "Med andra ord",
     149,
-    "img",
+    "../assets/andraord.jpeg",
     "Beskriv samma sak, med andra ord. Under tidspress!",
     "family"
 );
 let gameSeven: Game = new Game(
     "Rackare",
     149,
-    "img",
+    "../assets/rackare.jpeg",
     "Rackare är ett löjligt enkelt festspel, till den grad att endast puckon kan missuppfatta reglerna.",
     "family"
 );
 let gameEight: Game = new Game(
     "Alias",
     149,
-    "img",
+    "../assets/alias.jpeg",
     "Ett ordförklaringsspel för vuxna som spelas i tvåmannalag. Spelet går ut på att förklara ord.",
     "family"
 );
 let gameNine: Game = new Game(
     "Othello",
     149,
-    "img",
+    "../assets/othello.jpg",
     "Alla förstår spelet på en minut, men det tar en livstid att bemästra de taktiska finesserna.",
     "family"
 );
 let gameTen: Game = new Game(
     "Kalaha",
     149,
-    "img",
+    "../assets/kalaha.jpeg",
     "Den som får flest kulor i sin poängskål vinner!",
     "family"
 );
 let gameEleven: Game = new Game(
     "Yatzy",
     149,
-    "img",
+    "../assets/yatzy.jpeg",
     "Yatzy är ett tärningsspel med 5 tärningar som uppfanns på 1950-talet. ",
     "family"
 );
 let gameTwelve: Game = new Game(
     "Trivial pursuit",
     149,
-    "img",
+    "../assets/trivial.jpeg",
     "Klassiskt spel på klassisk spelplan.",
     "family"
 );
 let gameThirteen: Game = new Game(
     "Rappakalja",
     149,
-    "img",
+    "../assets/rappakalja.jpeg",
     "Originalversionen av ett av världens populäraste spel! Du ska hitta på fantastiska men samtidigt trovärdiga förklaringar till vansinniga men ändå genuina svenska ord.",
     "family"
 );
@@ -108,7 +108,6 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
-
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
     console.log(gameList);
@@ -120,18 +119,18 @@ function createHTML() {
         let product = gameList[i];
 
         //Skapar nya element och ger dom klasser
-        let prodDiv:HTMLDivElement = document.createElement("div");
-        prodDiv.className = "game-div"
-        let prodName:HTMLHeadingElement = document.createElement("h3");
+        let prodDiv: HTMLDivElement = document.createElement("div");
+        prodDiv.className = "game-div";
+        let prodName: HTMLHeadingElement = document.createElement("h3");
         prodName.className = "game-name";
-        let prodImage:HTMLImageElement = document.createElement("img");
-        let imageWrapper:HTMLDivElement = document.createElement("div");
+        let prodImage: HTMLImageElement = document.createElement("img");
+        let imageWrapper: HTMLDivElement = document.createElement("div");
         imageWrapper.className = "game-img-wrapper";
-        let prodPrice:HTMLSpanElement = document.createElement("span");
+        let prodPrice: HTMLSpanElement = document.createElement("span");
         prodPrice.className = "price";
-        let buyButton:HTMLButtonElement = document.createElement("button");
+        let buyButton: HTMLButtonElement = document.createElement("button");
         buyButton.className = "buy-button";
-        let infoDiv:HTMLDivElement = document.createElement("div");
+        let infoDiv: HTMLDivElement = document.createElement("div");
         infoDiv.className = "buy-div";
 
         //Sätter olika egenskaper på elementen
@@ -146,7 +145,6 @@ function createHTML() {
         prodDiv.addEventListener("click", () => {
             clickOnProd(gameList[i]);
         });
-
 
         //Lägger till elementen till en förälder
         imageWrapper.appendChild(prodImage);
