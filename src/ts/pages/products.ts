@@ -108,6 +108,7 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
+
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
     console.log(gameList);
@@ -118,30 +119,41 @@ function createHTML() {
     for (let i = 0; i < gameList.length; i++) {
         let product = gameList[i];
 
-        let prodDiv: HTMLDivElement = document.createElement("div");
-        prodDiv.className = "prodlist";
-        let prodName: HTMLSpanElement = document.createElement("span");
-        prodName.className = "gameName";
+        //Skapar nya element och ger dom klasser
+        let prodDiv:HTMLDivElement = document.createElement("div");
+        prodDiv.className = "game-div"
+        let prodName:HTMLHeadingElement = document.createElement("h3");
+        prodName.className = "game-name";
+        let prodImage:HTMLImageElement = document.createElement("img");
+        let imageWrapper:HTMLDivElement = document.createElement("div");
+        imageWrapper.className = "game-img-wrapper";
+        let prodPrice:HTMLSpanElement = document.createElement("span");
+        prodPrice.className = "price";
+        let buyButton:HTMLButtonElement = document.createElement("button");
+        buyButton.className = "buy-button";
+        let infoDiv:HTMLDivElement = document.createElement("div");
+        infoDiv.className = "buy-div";
 
-        let prodImage: HTMLImageElement = document.createElement("img");
-        let imageWrapper: HTMLDivElement = document.createElement("div");
-        imageWrapper.className = "gameImgWrapper";
-
-        let prodDes: HTMLParagraphElement = document.createElement("p");
-        prodDes.className = "gameDes";
-
+        //Sätter olika egenskaper på elementen
         prodName.innerHTML = product.name;
         prodImage.src = product.image;
-        prodDes.innerHTML = product.description;
+        //prodImage.src = new URL('../../assets/monopol.jpg', import.meta.url);
+        prodImage.alt = product.name;
+        //prodDes.innerHTML = product.description;
+        buyButton.innerHTML = "Lägg i varukorgen";
+        prodPrice.innerHTML = product.price.toString() + ":-";
 
         prodDiv.addEventListener("click", () => {
             clickOnProd(gameList[i]);
         });
 
+
+        //Lägger till elementen till en förälder
         imageWrapper.appendChild(prodImage);
-        prodDiv.appendChild(prodName);
         prodDiv.appendChild(imageWrapper);
-        prodDiv.appendChild(prodDes);
+        prodDiv.appendChild(prodName);
+        prodDiv.appendChild(prodPrice);
+        prodDiv.appendChild(buyButton);
 
         document.getElementById("product-wrapper").appendChild(prodDiv);
     }
