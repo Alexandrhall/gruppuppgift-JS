@@ -1,7 +1,85 @@
+@use "mixins";
+
 html {
-    background-color: blueviolet;
-    color: orange;
+  color: black;
 }
+
+body{
+  margin: 0;
+  @include mixins.flex-col;
+}
+
+#product-wrapper{
+  @include mixins.flex-col;
+  row-gap: 40px;
+  column-gap: 20px;
+
+  @include mixins.tablets-only{
+    flex-direction: row;
+    width: 90%;
+    flex-wrap: wrap;
+    column-gap: 50px;
+  }
+
+  @include mixins.desktop-only{
+    justify-content: space-around;
+    row-gap: 30px;
+    width: 80%;
+    max-width: 1000px;
+  }
+
+  .game-div{
+    @include mixins.flex-col;
+    background-color: white;
+    width: 85%;
+    border-radius: 5px;
+    row-gap: 10px;
+
+    @include mixins.tablets-only{
+      width: 300px;
+    }
+
+    @include mixins.desktop-only{
+      width: 200px;
+    }
+
+
+
+
+    .game-name{
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .game-img-wrapper{
+      width: 80%;
+
+      img{
+        width: 100%;
+      }
+    }
+
+    .game-description{
+      width: 90%;
+
+      @include mixins.desktop-only{
+        height: 80px;
+      }
+    }
+
+    .price{
+      font-size: 14pt;
+    }
+
+    .buy-button{
+      @include mixins.button;
+      height: 38px;
+      width: 100%;
+    }
+  }
+
+}
+
 //Footer SH
 // footer {
 //     display: flex;
@@ -11,7 +89,6 @@ html {
 //     width: 100%;
 //     gap: 20%;
 //     background-color: #5e7e9b;
-
 //     .footer-menu {
 //         padding: 0;
 //     }
@@ -30,8 +107,7 @@ html {
 // }
 // .media {
 //     display: flex;
-//     justify-content: center;
-
+//     justify-content: center;  
 //     i {
 //         padding: 15%;
 //     }

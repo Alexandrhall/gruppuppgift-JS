@@ -1,0 +1,28 @@
+$blue: #5E7E9B;
+$gray: #E5E5E5;
+
+@mixin tablets-only() {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop-only() {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin button{
+    background-color: $blue;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+}
