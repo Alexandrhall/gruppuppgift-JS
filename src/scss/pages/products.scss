@@ -8,11 +8,6 @@ body {
     margin: 0;
 }
 
-// .menu1 {
-//     position: relative;
-//     z-index: 2;
-// }
-
 #product-wrapper {
     @include mixins.flex-col;
     margin: 0 auto;
