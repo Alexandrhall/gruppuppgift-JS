@@ -125,7 +125,8 @@ html {
     text-align: center;
     height: 0px;
     overflow: hidden;
-    z-index: 1;
+    position: relative;
+    z-index: 2;
     transition: all 0.3s ease;
     a {
         text-decoration: none;
@@ -139,7 +140,6 @@ html {
 .link1 {
     width: 120px;
     margin-top: 10px;
-    // margin-bottom: 10px;
     height: 120px;
     padding: 2px;
     font-size: 12pt;

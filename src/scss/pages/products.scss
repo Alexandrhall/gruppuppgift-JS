@@ -8,11 +8,19 @@ body {
     margin: 0;
 }
 
+// .menu1 {
+//     position: relative;
+//     z-index: 2;
+// }
+
 #product-wrapper {
     @include mixins.flex-col;
     margin: 0 auto;
     row-gap: 40px;
     column-gap: 20px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
 
     @include mixins.tablets-only {
         flex-direction: row;
@@ -26,6 +34,10 @@ body {
         row-gap: 30px;
         width: 80%;
         max-width: 1000px;
+    }
+
+    .game-div:hover {
+        box-shadow: 1px 2px 5px 3px lightgrey;
     }
 
     .game-div {
