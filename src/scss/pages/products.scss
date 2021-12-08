@@ -8,6 +8,12 @@ body {
     margin: 0;
 }
 
+.prodSort{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+}
+
 #product-wrapper {
     @include mixins.flex-col;
     margin: 0 auto;
