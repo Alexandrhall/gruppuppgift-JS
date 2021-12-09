@@ -108,6 +108,7 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
+//Variabel som håller koll på vilken kategori som är vald
 let currentDisplay:string = "all";
 
 window.onload = function () {

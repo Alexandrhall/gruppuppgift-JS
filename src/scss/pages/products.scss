@@ -13,6 +13,10 @@ body {
     justify-content: flex-end;
     margin: 20px;
 
+    @include mixins.tablets-only {
+        width: 90%;
+    }
+
     .chosenSort{
         font-weight: bold;
     }
