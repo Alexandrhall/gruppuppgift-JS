@@ -21,16 +21,20 @@ function createHTML() {
     let img: HTMLImageElement = document.createElement("img");
     let price: HTMLSpanElement = document.createElement("h3");
     let description: HTMLSpanElement = document.createElement("span");
-    let namePrice: HTMLDivElement = document.createElement("div");
+    let infoWrap: HTMLDivElement = document.createElement("div");
+    infoWrap.className = "infoWrap";
+    let button: HTMLButtonElement = document.createElement("button");
 
     name.innerHTML = game.name;
     img.src = game.image;
     price.innerHTML = game.price + ":-";
     description.innerHTML = game.description;
+    button.innerHTML = "Lägg till i varukorgen";
 
     prodInfo.appendChild(img);
-    namePrice.appendChild(name);
-    namePrice.appendChild(price);
-    prodInfo.appendChild(namePrice);
+    infoWrap.appendChild(name);
+    infoWrap.appendChild(price);
+    infoWrap.appendChild(button);
+    prodInfo.appendChild(infoWrap);
     prodInfo.appendChild(description);
 }
