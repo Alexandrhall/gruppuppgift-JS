@@ -1,5 +1,6 @@
 import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
+import { cartList } from "./cart";
 
 let gameOne: Game = new Game(
     "Monopol",
@@ -131,7 +132,7 @@ window.onload = function () {
     document.getElementById("sortCheap").addEventListener("click", sortCheap);
 
     //Dropdown sortering
-    document.getElementById("dropdownButton").addEventListener("click", dropDown);
+    document.getElementById("dropdownButton").addEventListener("click", dropDown);    
 
     //Standard display
     showAllCategories();
@@ -189,6 +190,10 @@ function createHTML(i:number){
         clickOnProd(gameList[i]);
     });
 
+    buyButton.addEventListener("click", () => {
+        addToCart(product);
+    });
+
     //Lägger till elementen till en förälder
     imageWrapper.appendChild(prodImage);
     prodDiv.appendChild(imageWrapper);
@@ -197,6 +202,13 @@ function createHTML(i:number){
     prodDiv.appendChild(buyButton);
 
     document.getElementById("product-wrapper").appendChild(prodDiv);
+}
+
+function addToCart(product:Game){
+    cartList.push(product);
+    sessionStorage.setItem("cartList", JSON.stringify(cartList));
+    console.log(cartList);
+    
 }
 
 // Soreterar på pris högt-lågt
