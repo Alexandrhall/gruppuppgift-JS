@@ -1,6 +1,7 @@
 import { logToHome } from "../main";
 import { Game } from "../pages/models/Game";
 
+
 export let cartList:Game[] = [];
 
 window.onload = function () {
@@ -27,6 +28,7 @@ function createHTML(){
         let prodImageWrapper:HTMLDivElement = document.createElement("div");
         prodImageWrapper.className = "prodImage-wrapper";
         let infoDiv:HTMLDivElement = document.createElement("div");
+        infoDiv.className = "prodInfo";
         let prodName:HTMLHeadingElement = document.createElement("h3");
         prodName.innerHTML = savedCart[i].name;
         let prodPrice:HTMLSpanElement = document.createElement("span");
