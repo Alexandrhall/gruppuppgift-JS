@@ -12,6 +12,10 @@ body {
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+
+    .chosenSort{
+        font-weight: bold;
+    }
     
     button{
         width: 120px;

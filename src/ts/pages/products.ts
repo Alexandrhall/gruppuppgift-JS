@@ -199,6 +199,8 @@ function sortExp(){
     }else{
         chooseCategory(currentDisplay);
     }
+    document.getElementById("sortExp").classList.add("chosenSort");
+    document.getElementById("sortCheap").classList.remove("chosenSort");
 }
 
 function sortCheap(){
@@ -208,6 +210,8 @@ function sortCheap(){
     }else{
         chooseCategory(currentDisplay);
     }
+    document.getElementById("sortCheap").classList.add("chosenSort");
+    document.getElementById("sortExp").classList.remove("chosenSort");
 }
 
 function clickOnProd(e) {
