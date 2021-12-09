@@ -8,26 +8,59 @@ body {
     margin: 0;
 }
 
-.prodSort{
+.sort-wrapper{
     display: flex;
-    justify-content: flex-end;
-    margin: 20px;
+    justify-content: center;
 
-    @include mixins.tablets-only {
+    .prodSort{
+        position: relative;
+        display: inline-block;
         width: 90%;
-    }
-
-    .chosenSort{
-        font-weight: bold;
-    }
+        margin: 20px;
     
-    button{
-        width: 120px;
-        color: black;
-        background-color: white;
-        border: 0;
+        @include mixins.tablets-only {
+            width: 80%;
+            max-width: 1000px;
+        }
+    
+        .chosenSort{
+            font-weight: bold;
+        }
+        
+        #dropdownButton{
+            height: 35px;
+            color: black;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        
+        .dropdown-menu {
+            display: none;
+            list-style: none;
+            position: absolute;
+            padding: 5px;
+            margin: 0;
+            background-color: white;
+            width: 140px;
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+    
+            li{
+                padding-bottom: 5px ;
+                cursor: pointer;
+            }
+        }
+    
+        .show {
+            display:block;
+        }
     }
 }
+
 
 #product-wrapper {
     @include mixins.flex-col;

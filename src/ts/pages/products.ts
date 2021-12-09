@@ -130,9 +130,16 @@ window.onload = function () {
     document.getElementById("sortExp").addEventListener("click", sortExp);
     document.getElementById("sortCheap").addEventListener("click", sortCheap);
 
+    //Dropdown sortering
+    document.getElementById("dropdownButton").addEventListener("click", dropDown);
+
     //Standard display
     showAllCategories();
 };
+
+function dropDown(){
+    document.getElementById("sortDropdown").classList.toggle("show");
+}
 
 function showAllCategories() {
     document.getElementById("product-wrapper").innerHTML="";
