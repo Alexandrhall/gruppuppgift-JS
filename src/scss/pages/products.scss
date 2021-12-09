@@ -8,6 +8,27 @@ body {
     margin: 0;
 }
 
+.prodSort{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+
+    @include mixins.tablets-only {
+        width: 90%;
+    }
+
+    .chosenSort{
+        font-weight: bold;
+    }
+    
+    button{
+        width: 120px;
+        color: black;
+        background-color: white;
+        border: 0;
+    }
+}
+
 #product-wrapper {
     @include mixins.flex-col;
     margin: 0 auto;

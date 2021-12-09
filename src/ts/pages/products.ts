@@ -108,9 +108,13 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
+//Variabel som håller koll på vilken kategori som är vald
+let currentDisplay:string = "all";
+
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
     
+    //Eventlisteners kategorier
     document.getElementById("catAll").addEventListener("click", showAllCategories);
     document.getElementById("catBoard").addEventListener("click", () => {
         chooseCategory("board");
@@ -122,6 +126,11 @@ window.onload = function () {
         chooseCategory("family");
     });
 
+    //Eventlisteners sortering
+    document.getElementById("sortExp").addEventListener("click", sortExp);
+    document.getElementById("sortCheap").addEventListener("click", sortCheap);
+
+    //Standard display
     showAllCategories();
 };
 
@@ -130,6 +139,7 @@ function showAllCategories() {
     for (let i = 0; i < gameList.length; i++) {
         createHTML(i);
     }
+    currentDisplay = "all";
 }
 
 function chooseCategory(e:string){
@@ -139,6 +149,8 @@ function chooseCategory(e:string){
             createHTML(i);
         }
     }
+    //Sätter variabeln till den valda kategorin
+    currentDisplay = e;
 }
 
 function createHTML(i:number){
@@ -178,6 +190,29 @@ function createHTML(i:number){
     prodDiv.appendChild(buyButton);
 
     document.getElementById("product-wrapper").appendChild(prodDiv);
+}
+
+// Soreterar på pris högt-lågt
+function sortExp(){
+    gameList.sort(function(a, b){return b.price - a.price});
+    if (currentDisplay == "all"){
+        showAllCategories();
+    }else{
+        chooseCategory(currentDisplay);
+    }
+    document.getElementById("sortExp").classList.add("chosenSort");
+    document.getElementById("sortCheap").classList.remove("chosenSort");
+}
+
+function sortCheap(){
+    gameList.sort(function(b, a){return b.price - a.price});
+    if (currentDisplay == "all"){
+        showAllCategories();
+    }else{
+        chooseCategory(currentDisplay);
+    }
+    document.getElementById("sortCheap").classList.add("chosenSort");
+    document.getElementById("sortExp").classList.remove("chosenSort");
 }
 
 function clickOnProd(e) {
