@@ -114,6 +114,7 @@
           <div class="col">
             <label for="firstName" class="form-label">kort nummer</label>
             <input
+              pattern="[0-9-]{19}"
               id="card"
               type="tel"
               class="form-control"
@@ -128,10 +129,11 @@
           <div class="col-md-6 col-sm-12">
             <label for="firstName" class="form-label"> Månad</label>
             <input
+              pattern="[1-9]{1,2}"
               id="month"
               type="tel"
               class="form-control"
-              placeholder="Exp month*"
+              placeholder="Exp month 1-12*"
               required
             />
             <div class="invalid-feedback">Valid month is required.</div>
@@ -139,10 +141,11 @@
           <div class="col">
             <label for="firstName" class="form-label">År</label>
             <input
+              pattern="[0-9]{4}"
               id="year"
               type="tel"
               class="form-control"
-              placeholder="Exp year*"
+              placeholder="Exp year 2023*"
               required
             />
             <div class="invalid-feedback">Valid year is required.</div>
@@ -152,6 +155,7 @@
           <div class="col-3">
             <label for="firstName" class="form-label">Cvv</label>
             <input
+              pattern="[0-9]{3}"
               id="cvv"
               type="tel"
               class="form-control"
@@ -163,15 +167,15 @@
         </div>
 
         <div class="row justify-content-center">
-          <div class="modal-container">
-            <button
-              type="button"
-              class="btn btn-primary purchase-btn"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              Lägg order
-            </button>
+          <button
+            type="submit"
+            class="btn btn-primary purchase-btn"
+            data-bs-target="#staticBackdrop"
+          >
+            Lägg order
+          </button>
+
+          <div class="modal-container" tabindex="-1">
             <div
               class="modal fade"
               id="staticBackdrop"
