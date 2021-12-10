@@ -45,10 +45,6 @@ function createHTML(){
 }
 
 export function addToCart(product:Game){
-    // if(cartList.length === 0){
-    //     console.log(product);
-    // }
-
     //Kollar om listan är tom
     if(cartList.length === 0){
         //Lägger in en produkt i listan
