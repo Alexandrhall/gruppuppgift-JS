@@ -227,3 +227,8 @@ function sortCheap(){
     document.getElementById("sortCheap").classList.add("chosenSort");
     document.getElementById("sortExp").classList.remove("chosenSort");
 }
+
+// function clickOnProd(e) {
+//     sessionStorage.setItem("game", JSON.stringify(e));
+//     location.href = "http://localhost:1234/pages/productinfo.html";
+// }
