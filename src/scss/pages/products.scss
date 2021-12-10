@@ -8,34 +8,33 @@ body {
     margin: 0;
 }
 
-.sort-wrapper{
+.sort-wrapper {
     display: flex;
     justify-content: center;
 
-    .prodSort{
+    .prodSort {
         position: relative;
         display: inline-block;
         width: 90%;
         margin: 20px;
-    
+
         @include mixins.tablets-only {
             width: 80%;
             max-width: 1000px;
         }
-    
-        .chosenSort{
+
+        .chosenSort {
             font-weight: bold;
         }
-        
-        #dropdownButton{
+
+        #dropdownButton {
             height: 35px;
             color: black;
             border: none;
             background-color: white;
             cursor: pointer;
         }
-        
-        
+
         .dropdown-menu {
             display: none;
             list-style: none;
@@ -46,27 +45,29 @@ body {
             width: 140px;
             border: 1px solid lightgray;
             border-radius: 4px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-    
-            li{
-                padding-bottom: 5px ;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+
+            li {
+                padding-bottom: 5px;
                 cursor: pointer;
             }
         }
-    
+
         .show {
-            display:block;
+            display: block;
         }
     }
 }
-
 
 #product-wrapper {
     @include mixins.flex-col;
     margin: 0 auto;
     row-gap: 40px;
     column-gap: 20px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
 
     @include mixins.tablets-only {
         flex-direction: row;
@@ -80,6 +81,10 @@ body {
         row-gap: 30px;
         width: 80%;
         max-width: 1000px;
+    }
+
+    .game-div:hover {
+        box-shadow: 1px 2px 5px 3px lightgrey;
     }
 
     .game-div {
