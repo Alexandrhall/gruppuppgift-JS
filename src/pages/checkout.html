@@ -47,6 +47,205 @@
             <span class="prodSort">Familjespel</span>
         </div>
         <h1>Hej Här har vi kassan</h1>
+        <form class="needs-validation" novalidate>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <label for="firstName" class="form-label">Förnamn</label>
+            <input
+              id="firstName"
+              type="text"
+              class="form-control"
+              placeholder="Janne*"
+              required
+            />
+            <div class="invalid-feedback">Valid first name is required.</div>
+          </div>
+
+          <div class="col">
+            <label for="lastName" class="form-label">Efternamn</label>
+            <input
+              id="lastName"
+              type="text"
+              class="form-control"
+              placeholder="Pettersson*"
+              required
+            />
+            <div class="invalid-feedback">Valid Last name is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                placeholder="Email*"
+                required
+              />
+              <div class="invalid-feedback">Valid Email is required.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <label for="address" class="form-label">Adress</label>
+            <input
+              id="address"
+              type="text"
+              class="form-control"
+              placeholder="Lunda 24*"
+              required
+            />
+            <div class="invalid-feedback">Valid Address is required.</div>
+          </div>
+          <div class="col">
+            <label for="city" class="form-label">Stad</label>
+            <input
+              id="city"
+              type="text"
+              class="form-control"
+              placeholder="Stockholm*"
+              required
+            />
+            <div class="invalid-feedback">Valid city is required.</div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <h3>Betalning</h3>
+        </div>
+        <div class="row justify-content-center">
+          <i class="fa fa-cc-visa fa-2x" style="color: navy"></i>
+          <i class="fa fa-cc-amex fa-2x" style="color: blue"></i>
+          <i class="fa fa-cc-mastercard fa-2x" style="color: red"></i>
+          <i class="fa fa-cc-discover fa-2x" style="color: orange"></i>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <label for="firstName" class="form-label">Namn</label>
+            <input
+              id="Name"
+              type="text"
+              class="form-control"
+              placeholder="Janne*"
+              required
+            />
+            <div class="invalid-feedback">Valid first name is required.</div>
+          </div>
+          <div class="col">
+            <label for="firstName" class="form-label">kort nummer</label>
+            <input
+              pattern="[0-9-]{19}"
+              id="card"
+              type="tel"
+              class="form-control"
+              placeholder="1111-2222-3333-4444*"
+              required
+            />
+            <div class="invalid-feedback">Valid number is required.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <label for="firstName" class="form-label"> Månad</label>
+            <input
+              pattern="[1-9]{1,2}"
+              id="month"
+              type="tel"
+              class="form-control"
+              placeholder="Exp month 1-12*"
+              required
+            />
+            <div class="invalid-feedback">Valid month is required.</div>
+          </div>
+          <div class="col">
+            <label for="firstName" class="form-label">År</label>
+            <input
+              pattern="[0-9]{4}"
+              id="year"
+              type="tel"
+              class="form-control"
+              placeholder="Exp year 2023*"
+              required
+            />
+            <div class="invalid-feedback">Valid year is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="firstName" class="form-label">Cvv</label>
+            <input
+              pattern="[0-9]{3}"
+              id="cvv"
+              type="tel"
+              class="form-control"
+              placeholder="123*"
+              required
+            />
+            <div class="invalid-feedback">Valid cvv is required.</div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <button
+            type="submit"
+            class="btn btn-primary purchase-btn"
+            data-bs-target="#staticBackdrop"
+          >
+            Lägg order
+          </button>
+
+          <div class="modal-container" tabindex="-1">
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title display-6">
+                      Tack för din beställning!
+                    </h4>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      x
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Vi har tagit emot din beställning!</h5>
+
+                    <p>Ditt packet levereras innom 3 arbetsdagar</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary closing-btn"
+                      data-bs-dismiss="modal"
+                    >
+                      Stäng
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    
         <footer>
             <div class="footer-menu">
                <ul>
@@ -75,6 +274,43 @@
        </i>
        </div>
    </footer>
+
+   <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+
+        Array.prototype.slice
+          .call(forms)
+
+          .forEach(function (form) {
+            form.addEventListener(
+              "submit",
+              function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault();
+
+                  event.stopPropagation();
+                }
+
+                form.classList.add("was-validated");
+              },
+              false
+            );
+          });
+      })();
+    </script>
     </body>
 </html>
 
