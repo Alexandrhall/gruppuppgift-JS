@@ -1,3 +1,4 @@
+
 import { logToHome } from "../main";
 
 window.onload = function () {
