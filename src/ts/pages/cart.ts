@@ -1,5 +1,6 @@
 import { logToHome } from "../main";
 import { Game } from "../pages/models/Game";
+import { Cart } from "../pages/models/Cart";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
@@ -15,6 +16,7 @@ function goToCheckout(){
 
 function createHTML(){
     let savedCart:Game[] = JSON.parse(sessionStorage.getItem("cartList"));
+    
 
     for (let i = 0; i < savedCart.length; i++) {
         let itemDiv:HTMLDivElement = document.createElement("div");

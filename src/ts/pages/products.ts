@@ -109,6 +109,9 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
+//Variabel som innehåller nuvarande varukorg
+let currentCart = new Cart;
+
 //Variabel som håller koll på vilken kategori som är vald
 let currentDisplay:string = "all";
 
@@ -191,9 +194,7 @@ function createHTML(i:number){
     // });
 
     buyButton.addEventListener("click", () => {
-        
-        let aCart = new Cart;
-        aCart.addToCart(product);
+        currentCart.addToCart(product);
     });
 
     //Lägger till elementen till en förälder
