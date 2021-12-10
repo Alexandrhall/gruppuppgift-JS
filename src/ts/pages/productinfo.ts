@@ -17,18 +17,28 @@ function createHTML() {
         "prodInfo"
     ) as HTMLDivElement;
 
-    let span: HTMLSpanElement = document.createElement("span");
+    let name: HTMLSpanElement = document.createElement("h3");
     let img: HTMLImageElement = document.createElement("img");
-    let price: HTMLSpanElement = document.createElement("span");
+    let price: HTMLSpanElement = document.createElement("h3");
     let description: HTMLSpanElement = document.createElement("span");
+    let infoWrap: HTMLDivElement = document.createElement("div");
+    infoWrap.className = "infoWrap";
+    let number: HTMLInputElement = document.createElement("input");
+    number.type = "number";
+    number.value = "1";
+    let button: HTMLButtonElement = document.createElement("button");
 
-    span.innerHTML = game.name;
+    name.innerHTML = game.name;
     img.src = game.image;
-    price.innerHTML = game.price;
+    price.innerHTML = game.price + ":-";
     description.innerHTML = game.description;
+    button.innerHTML = "Lägg till i varukorgen";
 
-    prodInfo.appendChild(span);
     prodInfo.appendChild(img);
+    infoWrap.appendChild(name);
+    infoWrap.appendChild(price);
+    infoWrap.appendChild(number);
+    infoWrap.appendChild(button);
+    prodInfo.appendChild(infoWrap);
     prodInfo.appendChild(description);
-    prodInfo.appendChild(price);
 }
