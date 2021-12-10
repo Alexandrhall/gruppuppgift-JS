@@ -9,6 +9,7 @@
         row-gap: 35px;
         margin: 50px;
         justify-content: space-evenly;
+        max-width: 1050px;
 
         img {
             width: 350px;
@@ -30,6 +31,12 @@
             }
             span {
                 font-size: 18px;
+            }
+            input {
+                margin-bottom: 10px;
+                height: 20px;
+                width: 100px;
+                appearance: none;
             }
             button {
                 @include mixins.button;

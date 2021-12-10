@@ -23,6 +23,9 @@ function createHTML() {
     let description: HTMLSpanElement = document.createElement("span");
     let infoWrap: HTMLDivElement = document.createElement("div");
     infoWrap.className = "infoWrap";
+    let number: HTMLInputElement = document.createElement("input");
+    number.type = "number";
+    number.value = "1";
     let button: HTMLButtonElement = document.createElement("button");
 
     name.innerHTML = game.name;
@@ -34,6 +37,7 @@ function createHTML() {
     prodInfo.appendChild(img);
     infoWrap.appendChild(name);
     infoWrap.appendChild(price);
+    infoWrap.appendChild(number);
     infoWrap.appendChild(button);
     prodInfo.appendChild(infoWrap);
     prodInfo.appendChild(description);
