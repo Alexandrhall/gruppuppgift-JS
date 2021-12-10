@@ -1,7 +1,6 @@
 import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
-import { addToCart } from "../pages/cart";
-
+import { Cart } from "../pages/models/Cart";
 
 let gameOne: Game = new Game(
     "Monopol",
@@ -192,7 +191,9 @@ function createHTML(i:number){
     // });
 
     buyButton.addEventListener("click", () => {
-        addToCart(product);
+        
+        let aCart = new Cart;
+        aCart.addToCart(product);
     });
 
     //Lägger till elementen till en förälder
@@ -205,7 +206,7 @@ function createHTML(i:number){
     document.getElementById("product-wrapper").appendChild(prodDiv);
 }
 
-// Funktioner som oreterar på pris
+// Funktioner som sorterar på pris
 function sortExp(){
     gameList.sort(function(a, b){return b.price - a.price});
     if (currentDisplay == "all"){
