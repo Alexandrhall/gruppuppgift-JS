@@ -1,8 +1,7 @@
 import { logToHome } from "../main";
 import { Game } from "../pages/models/Game";
 
-
-export let cartList:Game[] = [];
+let cartList:Game[] = JSON.parse(sessionStorage.getItem("cartList")) || [];
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
@@ -44,3 +43,49 @@ function createHTML(){
     }
     
 }
+
+export function addToCart(product:Game){
+    // if(cartList.length === 0){
+    //     console.log(product);
+    // }
+
+    //Kollar om listan är tom
+    if(cartList.length === 0){
+        //Lägger in en produkt i listan
+        cartList.push(product);
+
+        //Sätter in listan i sessionStorage
+        sessionStorage.setItem("cartList", JSON.stringify(cartList));
+    }else{
+        // Sätter variabeln cartList till samma innehåll som den i storage
+        cartList = JSON.parse(sessionStorage.getItem("cartList"));
+
+        // Lägger till produkten i cartList
+        cartList.push(product);
+    }
+
+    sessionStorage.setItem("cartList", JSON.stringify(cartList));
+
+    console.log(cartList);
+    
+}
+
+// function addToCart(product:Game){
+    
+//     if (cartList[0] == null){
+//         cartList.push(product);
+//     }else{
+//         for (let i = 0; i < savedCart.length; i++) {
+//             cartList.push(savedCart[i]);
+//         }
+//     }
+//     sessionStorage.setItem("cartList", JSON.stringify(cartList));
+//     savedCart = JSON.parse(sessionStorage.getItem("cartList"));
+
+//     console.log("Den går in här");
+// }
+
+// function clickOnProd(e) {
+//     //sessionStorage.setItem("game", JSON.stringify(e));
+//     //location.href = "http://localhost:1234/pages/productinfo.html";
+// }

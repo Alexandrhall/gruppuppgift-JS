@@ -1,6 +1,7 @@
 import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
-import { cartList } from "./cart";
+import { addToCart } from "../pages/cart";
+
 
 let gameOne: Game = new Game(
     "Monopol",
@@ -186,9 +187,9 @@ function createHTML(i:number){
     buyButton.innerHTML = "Lägg i varukorgen";
     prodPrice.innerHTML = product.price.toString() + ":-";
 
-    prodDiv.addEventListener("click", () => {
-        clickOnProd(gameList[i]);
-    });
+    // prodDiv.addEventListener("click", () => {
+    //     clickOnProd(gameList[i]);
+    // });
 
     buyButton.addEventListener("click", () => {
         addToCart(product);
@@ -204,14 +205,7 @@ function createHTML(i:number){
     document.getElementById("product-wrapper").appendChild(prodDiv);
 }
 
-function addToCart(product:Game){
-    cartList.push(product);
-    sessionStorage.setItem("cartList", JSON.stringify(cartList));
-    console.log(cartList);
-    
-}
-
-// Soreterar på pris högt-lågt
+// Funktioner som oreterar på pris
 function sortExp(){
     gameList.sort(function(a, b){return b.price - a.price});
     if (currentDisplay == "all"){
@@ -232,9 +226,4 @@ function sortCheap(){
     }
     document.getElementById("sortCheap").classList.add("chosenSort");
     document.getElementById("sortExp").classList.remove("chosenSort");
-}
-
-function clickOnProd(e) {
-    sessionStorage.setItem("game", JSON.stringify(e));
-    location.href = "http://localhost:1234/pages/productinfo.html";
 }
