@@ -1,6 +1,7 @@
 import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
 import { addToCart } from "../pages/cart";
+import { Cart } from "../pages/models/Cart";
 
 let gameOne: Game = new Game(
     "Monopol",
@@ -109,6 +110,9 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
+//Variabel som innehåller nuvarande varukorg
+let currentCart = new Cart();
+
 //Variabel som håller koll på vilken kategori som är vald
 let currentDisplay: string = "all";
 
@@ -195,7 +199,7 @@ function createHTML(i: number) {
     });
 
     buyButton.addEventListener("click", () => {
-        addToCart(product);
+        currentCart.addToCart(product);
     });
 
     //Lägger till elementen till en förälder
@@ -208,7 +212,7 @@ function createHTML(i: number) {
     document.getElementById("product-wrapper").appendChild(prodWrapper);
 }
 
-// Funktioner som oreterar på pris
+// Funktioner som sorterar på pris
 function sortExp() {
     gameList.sort(function (a, b) {
         return b.price - a.price;

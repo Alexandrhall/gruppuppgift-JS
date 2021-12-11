@@ -2,6 +2,7 @@ import { logToHome } from "../main";
 import { Game } from "../pages/models/Game";
 
 let cartList: Game[] = JSON.parse(sessionStorage.getItem("cartList")) || [];
+import { Cart } from "../pages/models/Cart";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
