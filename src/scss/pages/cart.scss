@@ -4,21 +4,21 @@ html {
     background-color: blue;
 }
 
-main{
+main {
     @include mixins.flex-col;
     margin-bottom: 20px;
 
-    #checkoutButton{
+    #checkoutButton {
         @include mixins.button;
         width: 30%;
         height: 40px;
     }
 
-    #cart-wrapper{
+    #cartWrapper {
         @include mixins.flex-col;
         width: 100%;
 
-        .cartItem{
+        .cartItem {
             display: flex;
             justify-content: space-around;
             width: 90%;
@@ -26,14 +26,14 @@ main{
             border-radius: 5px;
             margin-bottom: 20px;
 
-            .prodImage-wrapper{
+            .prodImage-wrapper {
                 width: 100px;
-                img{
+                img {
                     width: 100%;
                 }
             }
 
-            .prodInfo{
+            .prodInfo {
                 width: 120px;
             }
         }
