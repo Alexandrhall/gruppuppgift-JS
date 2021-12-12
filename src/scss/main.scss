@@ -53,10 +53,25 @@ html {
         color: black;
     }
 
-    .fa {
+    .fa-shopping-cart {
         margin-top: 28px;
         font-size: 24pt;
         cursor: pointer;
+        position: relative;
+    }
+    .cartAmounter {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        color: red;
+        font-size: 15px;
+        span {
+            position: absolute;
+            right: 4px;
+            top: 2px;
+            color: white;
+            font-size: 12px;
+        }
     }
     .navMenu {
         margin: 30px;
