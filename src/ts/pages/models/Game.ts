@@ -11,13 +11,14 @@ export class Game {
         price: number,
         image: string,
         description: string,
-        category: string
+        category: string,
+        amount: number
     ) {
         this.name = name;
         this.price = price;
         this.image = image;
         this.description = description;
         this.category = category;
-        this.amount = 0;
+        this.amount = amount;
     }
 }
