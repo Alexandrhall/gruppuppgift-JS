@@ -1,8 +1,7 @@
 import { logToHome } from "../main";
-import { Game } from "../pages/models/Game";
-
-let cartList: Game[] = JSON.parse(sessionStorage.getItem("cartList")) || [];
 import { Cart } from "../pages/models/Cart";
+
+let cart = new Cart();
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
@@ -19,22 +18,18 @@ function goToCheckout() {
 }
 
 function createHTML() {
-    // let savedCart: Game[] = JSON.parse(sessionStorage.getItem("cartList"));
-    let cartWrapper: HTMLDivElement = document.getElementById(
-        "cartWrapper"
-    ) as HTMLDivElement;
-
+    
+    let cartWrapper: HTMLDivElement = document.getElementById("cartWrapper") as HTMLDivElement;
     cartWrapper.innerHTML = "";
 
-    let savedCart: Game[] = cartList;
-
+    
     let total: number = 0;
-
-    for (let i = 0; i < savedCart.length; i++) {
+    
+    for (let i = 0; i < cart.cartList.length; i++) {
         let itemDiv: HTMLDivElement = document.createElement("div");
         itemDiv.className = "cartItem";
         let prodImage: HTMLImageElement = document.createElement("img");
-        prodImage.src = savedCart[i].image;
+        prodImage.src = cart.cartList[i].game.image;
         let prodImageWrapper: HTMLDivElement = document.createElement("div");
         prodImageWrapper.className = "prodImage-wrapper";
         let infoDiv: HTMLDivElement = document.createElement("div");
@@ -42,9 +37,9 @@ function createHTML() {
         let amountBut: HTMLButtonElement = document.createElement("button");
         amountBut.className;
         let prodName: HTMLHeadingElement = document.createElement("h3");
-        prodName.innerHTML = savedCart[i].name;
+        prodName.innerHTML = cart.cartList[i].game.name;
         let prodPrice: HTMLSpanElement = document.createElement("span");
-        prodPrice.innerHTML = savedCart[i].price + " :-";
+        prodPrice.innerHTML = cart.cartList[i].game.price + " :-";
 
         prodImageWrapper.appendChild(prodImage);
 
@@ -53,13 +48,13 @@ function createHTML() {
 
         let trashFont = document.createElement("i");
         trashFont.className = "fa fa-trash-o";
-        trashFont.ariaHidden = "true";
+        //trashFont.ariaHidden = "true";
 
         trashFont.addEventListener("click", () => {
-            removeIt(i);
+            cart.removeIt(i);
         });
 
-        let AmountString = JSON.stringify(savedCart[i].amount);
+        let AmountString = JSON.stringify(cart.cartList[i].amount);
 
         let inputAmount: HTMLInputElement = document.createElement("input");
         inputAmount.id = "valueAmount" + (i + 1);
@@ -67,14 +62,14 @@ function createHTML() {
         inputAmount.value = AmountString;
 
         inputAmount.addEventListener("blur", () => {
-            addAmount(i);
+            cart.addAmount(i);
         });
 
         let totaltSpan: HTMLSpanElement = document.createElement(
             "span"
         ) as HTMLSpanElement;
 
-        total += savedCart[i].price * savedCart[i].amount;
+        total += cart.cartList[i].game.price * cart.cartList[i].amount;
         let totalString: string = JSON.stringify(total);
         totaltSpan.innerHTML = totalString;
 
@@ -93,51 +88,51 @@ function createHTML() {
     cartWrapper.appendChild(totaltSpan);
 }
 
-export function addToCart(product: Game) {
-    //Kollar om listan är tom
-    if (cartList.length === 0) {
-        //Lägger in en produkt i listan
-        cartList.push(product);
+// export function addToCart(product: Game) {
+//     //Kollar om listan är tom
+//     if (cartList.length === 0) {
+//         //Lägger in en produkt i listan
+//         cartList.push(product);
 
-        //Sätter in listan i sessionStorage
-        sessionStorage.setItem("cartList", JSON.stringify(cartList));
-    } else {
-        // Sätter variabeln cartList till samma innehåll som den i storage
-        cartList = JSON.parse(sessionStorage.getItem("cartList"));
+//         //Sätter in listan i sessionStorage
+//         sessionStorage.setItem("cartList", JSON.stringify(cartList));
+//     } else {
+//         // Sätter variabeln cartList till samma innehåll som den i storage
+//         cartList = JSON.parse(sessionStorage.getItem("cartList"));
 
-        // if (cartLis)
-        // for (let i = 0; i < cartList.length; i++) {
-        //     if (cartList[i].name === product.name) {
-        //         cartList[i].amount++;
-        //     } else {
-        //         cartList.push(product);
-        //     }
-        // }
+//         // if (cartLis)
+//         // for (let i = 0; i < cartList.length; i++) {
+//         //     if (cartList[i].name === product.name) {
+//         //         cartList[i].amount++;
+//         //     } else {
+//         //         cartList.push(product);
+//         //     }
+//         // }
 
-        // Lägger till produkten i cartList
-        // product.amount++;
-        // cartList.push(product);
-    }
+//         // Lägger till produkten i cartList
+//         // product.amount++;
+//         // cartList.push(product);
+//     }
 
-    sessionStorage.setItem("cartList", JSON.stringify(cartList));
+//     sessionStorage.setItem("cartList", JSON.stringify(cartList));
 
-    console.log(cartList);
-}
+//     console.log(cartList);
+// }
 
-function removeIt(i) {
-    cartList.splice(i, 1);
-    sessionStorage.setItem("cartList", JSON.stringify(cartList));
-    createHTML();
-    console.log(cartList);
-}
+// function removeIt(i) {
+//     cartList.splice(i, 1);
+//     sessionStorage.setItem("cartList", JSON.stringify(cartList));
+//     createHTML();
+//     console.log(cartList);
+// }
 
-function addAmount(i) {
-    let inputAmount: HTMLInputElement = document.getElementById(
-        "valueAmount" + (i + 1)
-    ) as HTMLInputElement;
+// function addAmount(i) {
+//     let inputAmount: HTMLInputElement = document.getElementById(
+//         "valueAmount" + (i + 1)
+//     ) as HTMLInputElement;
 
-    cartList[i].amount = parseInt(inputAmount.value);
+//     cartList[i].amount = parseInt(inputAmount.value);
 
-    sessionStorage.setItem("cartList", JSON.stringify(cartList));
-    createHTML();
-}
+//     sessionStorage.setItem("cartList", JSON.stringify(cartList));
+//     createHTML();
+// }
