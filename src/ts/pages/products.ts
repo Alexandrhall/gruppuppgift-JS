@@ -8,104 +8,91 @@ let gameOne: Game = new Game(
     249,
     "https://media.storochliten.se/product-images/XL/hasbro-monopol_54185-0.jpg",
     "Kasta dig ut i den spännande fastighetsbranschen och gör snabba klipp. Förflytta spelpjäsen runt spelplanen och köp och sälj tomter, bygg hus och hotell. Det handlar om stora pengar och om att snabbt bygga upp en förmögenhet tills du äger allt!",
-    "family",
-    1
+    "family"
 );
 let gameTwo: Game = new Game(
     "Schack",
     99,
     "https://schackshoppen.se/images/508-Skaks%C3%A6t%20i%20tr%C3%A6-p.jpg",
     "Ett logikspel för två. Ett väldigt fint schackbräde, helt i trä. Al, tysklönn samt med inlägg av betsat poppelträ som liknar sapele.",
-    "board",
-    1
+    "board"
 );
 let gameThree: Game = new Game(
     "Fia med knuff",
     79,
     "https://cdn.cdon.com/media-dynamic/images/product/cloud/store/SpecialDecorations/000/075/228/067/75228067-135496338-11453-org.jpg?cache=132661784599800444&impolicy=product&imwidth=600",
     "Ett ihopfällbart fia med knuff-spel för mellan 2-4 spelare. ",
-    "family",
-    1
+    "family"
 );
 let gameFour: Game = new Game(
     "Uno",
     79,
     "https://cdn.cdon.com/media-dynamic/images/product/cloud/store/CardGames/000/066/049/018/66049018-119941396-11453-org.jpg?cache=132572556568618987&impolicy=product&imwidth=600",
     "Skynda dig att bli av med alla dina kort. Använd händelsekorten mot dina motspelare. När du bara har ett kort kvar, måste du ropa uno!",
-    "card",
-    1
+    "card"
 );
 let gameFive: Game = new Game(
     "Ticket to ride",
     349,
     "https://www.spelexperten.com/bilder/artiklar/zoom/DOW7202S_1.jpg?m=1637219327",
     "Ticket to Ride: Europe är ett brädspel där varje spelare ska bygga ett nätverk av järnvägsspår.",
-    "board",
-    1
+    "board"
 );
 let gameSix: Game = new Game(
     "Med andra ord",
     249,
     "https://www.spelexperten.com/bilder/artiklar/zoom/1-38020-222_1.jpg?m=1637219324",
     "Beskriv samma sak, med andra ord. Under tidspress!",
-    "family",
-    1
+    "family"
 );
 let gameSeven: Game = new Game(
     "Rackare",
     199,
     "https://www.spelexperten.com/bilder/artiklar/zoom/30166_1.jpg?m=1637219325",
     "Rackare är ett löjligt enkelt festspel, till den grad att endast puckon kan missuppfatta reglerna.",
-    "card",
-    1
+    "card"
 );
 let gameEight: Game = new Game(
     "Alias",
     249,
     "https://www.spelexperten.com/bilder/artiklar/zoom/2129_1.jpg?m=1637219324",
     "Ett ordförklaringsspel för vuxna som spelas i tvåmannalag. Spelet går ut på att förklara ord.",
-    "family",
-    1
+    "family"
 );
 let gameNine: Game = new Game(
     "Othello",
     149,
     "https://img.fruugo.com/product/2/50/166667502_max.jpg",
     "Alla förstår spelet på en minut, men det tar en livstid att bemästra de taktiska finesserna.",
-    "board",
-    1
+    "board"
 );
 let gameTen: Game = new Game(
     "Kalaha",
     199,
     "https://www.spelexperten.com/bilder/artiklar/zoom/3127_1.jpg?m=1637219325",
     "Den som får flest kulor i sin poängskål vinner!",
-    "board",
-    1
+    "board"
 );
 let gameEleven: Game = new Game(
     "Yatzy",
     49,
     "https://www.partyhallen.se/cache/1b/799x799-b_klassiskt-yatzy-spel-1.jpg",
     "Yatzy är ett tärningsspel med 5 tärningar som uppfanns på 1950-talet. ",
-    "family",
-    1
+    "family"
 );
 let gameTwelve: Game = new Game(
     "Trivial pursuit",
     299,
     "https://media.babyland.se/product-images/XL/hasbro-trivial-pursuit-classic-edition_54191-2.jpg",
     "Klassiskt spel på klassisk spelplan.",
-    "family",
-    1
+    "family"
 );
 let gameThirteen: Game = new Game(
     "Rappakalja",
     99,
     "https://www.spelexperten.com/bilder/artiklar/zoom/53255_1.jpg?m=1637219325",
     "Originalversionen av ett av världens populäraste spel! Du ska hitta på fantastiska men samtidigt trovärdiga förklaringar till vansinniga men ändå genuina svenska ord.",
-    "family",
-    1
+    "family"
 );
 let gameList: Game[] = [
     gameOne,
@@ -217,6 +204,7 @@ function createHTML(i: number) {
         let content = new ContentOfCart(product, 1);
         currentCart.addToCart(content);
         cartAmountCount();
+        
     });
 
     //Lägger till elementen till en förälder
@@ -262,16 +250,22 @@ function clickOnProd(e) {
 }
 
 function cartAmountCount() {
-    let cartList: Game[] = JSON.parse(sessionStorage.getItem("cartList"));
+    //let cartList: ContentOfCart[] = JSON.parse(sessionStorage.getItem("cartList"));
+    let cart = new Cart();
 
-    if (cartList.length > 0) {
+    if (cart.cartList.length > 0) {
         let cartAmounter: HTMLElement = document.createElement("i");
         let cartAmountSpan: HTMLSpanElement = document.createElement("span");
 
         cartAmounter.className = "cartAmounter fa fa-circle";
-        cartAmounter.ariaHidden = "true";
+        //cartAmounter.ariaHidden = "true";
 
-        cartAmountSpan.innerHTML = JSON.stringify(cartList.length);
+        let totaltSum: number = 0;
+        for (let u = 0; u < cart.cartList.length; u++) {
+            totaltSum += cart.cartList[u].amount;
+        }
+
+        cartAmountSpan.innerHTML = JSON.stringify(totaltSum );
 
         let shopCart: HTMLElement = document.getElementById("prodCart");
 

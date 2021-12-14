@@ -52,6 +52,7 @@ function createHTML() {
 
         trashFont.addEventListener("click", () => {
             cart.removeIt(i);
+            createHTML();
         });
 
         let AmountString = JSON.stringify(cart.cartList[i].amount);
@@ -63,6 +64,7 @@ function createHTML() {
 
         inputAmount.addEventListener("blur", () => {
             cart.addAmount(i);
+            createHTML();
         });
 
         let totaltSpan: HTMLSpanElement = document.createElement(

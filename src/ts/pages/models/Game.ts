@@ -4,7 +4,6 @@ export class Game {
     image: string;
     description: string;
     category: string;
-    amount: number;
 
     constructor(
         name: string,
@@ -12,13 +11,11 @@ export class Game {
         image: string,
         description: string,
         category: string,
-        amount: number
     ) {
         this.name = name;
         this.price = price;
         this.image = image;
         this.description = description;
         this.category = category;
-        this.amount = amount;
     }
 }
