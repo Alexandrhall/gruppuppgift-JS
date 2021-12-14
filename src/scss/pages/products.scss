@@ -98,36 +98,34 @@ body {
             width: 300px;
         }
 
+        @include mixins.desktop-only {
+            width: 200px;
+        }
+
+        .game-name {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        img {
+            width: 80%;
+        }
+
+        .game-description {
+            width: 90%;
 
             @include mixins.desktop-only {
-                width: 200px;
-            }
-
-            .game-name {
-                font-weight: bold;
-                margin: 0;
-            }
-
-            img {
-                width: 80%;
-            }
-
-            .game-description {
-                width: 90%;
-
-                @include mixins.desktop-only {
-                    height: 80px;
-                }
-            }
-
-            .price {
-                font-size: 14pt;
+                height: 80px;
             }
         }
-        .buy-button {
-            @include mixins.button;
-            height: 38px;
-            width: 100%;
+
+        .price {
+            font-size: 14pt;
         }
+    }
+    .buy-button {
+        @include mixins.button;
+        height: 38px;
+        width: 100%;
     }
 }
