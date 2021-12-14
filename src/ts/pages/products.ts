@@ -157,6 +157,7 @@ window.onload = function () {
 
     //Standard display
     showAllCategories();
+    cartAmountCount();
 };
 
 function dropDown() {
@@ -180,6 +181,7 @@ function chooseCategory(e: string) {
     }
     //Sätter variabeln till den valda kategorin
     currentDisplay = e;
+    cartAmountCount();
 }
 
 function createHTML(i: number) {
@@ -213,6 +215,7 @@ function createHTML(i: number) {
 
     buyButton.addEventListener("click", () => {
         currentCart.addToCart(product);
+        cartAmountCount();
     });
 
     //Lägger till elementen till en förälder
@@ -255,4 +258,23 @@ function sortCheap() {
 function clickOnProd(e) {
     sessionStorage.setItem("game", JSON.stringify(e));
     location.href = "http://localhost:1234/pages/productinfo.html";
+}
+
+function cartAmountCount() {
+    let cartList: Game[] = JSON.parse(sessionStorage.getItem("cartList"));
+
+    if (cartList.length > 0) {
+        let cartAmounter: HTMLElement = document.createElement("i");
+        let cartAmountSpan: HTMLSpanElement = document.createElement("span");
+
+        cartAmounter.className = "cartAmounter fa fa-circle";
+        cartAmounter.ariaHidden = "true";
+
+        cartAmountSpan.innerHTML = JSON.stringify(cartList.length);
+
+        let shopCart: HTMLElement = document.getElementById("prodCart");
+
+        cartAmounter.appendChild(cartAmountSpan);
+        shopCart.appendChild(cartAmounter);
+    }
 }
