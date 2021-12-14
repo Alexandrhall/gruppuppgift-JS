@@ -1,7 +1,7 @@
 import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
-import { addToCart } from "../pages/cart";
 import { Cart } from "../pages/models/Cart";
+import { ContentOfCart } from "./models/ContentOfCart";
 
 let gameOne: Game = new Game(
     "Monopol",
@@ -214,7 +214,8 @@ function createHTML(i: number) {
     });
 
     buyButton.addEventListener("click", () => {
-        currentCart.addToCart(product);
+        let content = new ContentOfCart(product, 1);
+        currentCart.addToCart(content);
         cartAmountCount();
     });
 
