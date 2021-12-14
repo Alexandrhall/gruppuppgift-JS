@@ -1,5 +1,7 @@
 import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
+import { Cart } from "../pages/models/Cart";
+import { ContentOfCart } from "./models/ContentOfCart";
 
 let gameOne: Game = new Game(
     "Monopol",
@@ -108,14 +110,19 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
+//Variabel som innehåller nuvarande varukorg
+let currentCart = new Cart();
+
 //Variabel som håller koll på vilken kategori som är vald
-let currentDisplay:string = "all";
+let currentDisplay: string = "all";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
-    
+
     //Eventlisteners kategorier
-    document.getElementById("catAll").addEventListener("click", showAllCategories);
+    document
+        .getElementById("catAll")
+        .addEventListener("click", showAllCategories);
     document.getElementById("catBoard").addEventListener("click", () => {
         chooseCategory("board");
     });
@@ -131,36 +138,40 @@ window.onload = function () {
     document.getElementById("sortCheap").addEventListener("click", sortCheap);
 
     //Dropdown sortering
-    document.getElementById("dropdownButton").addEventListener("click", dropDown);
+    document
+        .getElementById("dropdownButton")
+        .addEventListener("click", dropDown);
 
     //Standard display
     showAllCategories();
+    cartAmountCount();
 };
 
-function dropDown(){
+function dropDown() {
     document.getElementById("sortDropdown").classList.toggle("show");
 }
 
 function showAllCategories() {
-    document.getElementById("product-wrapper").innerHTML="";
+    document.getElementById("product-wrapper").innerHTML = "";
     for (let i = 0; i < gameList.length; i++) {
         createHTML(i);
     }
     currentDisplay = "all";
 }
 
-function chooseCategory(e:string){
-    document.getElementById("product-wrapper").innerHTML="";
+function chooseCategory(e: string) {
+    document.getElementById("product-wrapper").innerHTML = "";
     for (let i = 0; i < gameList.length; i++) {
-        if(gameList[i].category == e){
+        if (gameList[i].category == e) {
             createHTML(i);
         }
     }
     //Sätter variabeln till den valda kategorin
     currentDisplay = e;
+    cartAmountCount();
 }
 
-function createHTML(i:number){
+function createHTML(i: number) {
     let product = gameList[i];
 
     //Skapar nya element och ger dom klasser
@@ -169,53 +180,64 @@ function createHTML(i:number){
     let prodName: HTMLHeadingElement = document.createElement("h3");
     prodName.className = "game-name";
     let prodImage: HTMLImageElement = document.createElement("img");
-    let imageWrapper: HTMLDivElement = document.createElement("div");
-    imageWrapper.className = "game-img-wrapper";
     let prodPrice: HTMLSpanElement = document.createElement("span");
     prodPrice.className = "price";
     let buyButton: HTMLButtonElement = document.createElement("button");
     buyButton.className = "buy-button";
     let infoDiv: HTMLDivElement = document.createElement("div");
     infoDiv.className = "buy-div";
+    let prodWrapper: HTMLDivElement = document.createElement("div");
+    prodWrapper.className = "gameWrapper";
 
     //Sätter olika egenskaper på elementen
     prodName.innerHTML = product.name;
     prodImage.src = product.image;
     prodImage.alt = product.name;
     buyButton.innerHTML = "Lägg i varukorgen";
-    prodPrice.innerHTML = product.price.toString() + ":-";
+    prodPrice.innerHTML = product.price + ":-";
 
     prodDiv.addEventListener("click", () => {
         clickOnProd(gameList[i]);
     });
 
+    buyButton.addEventListener("click", () => {
+        let content = new ContentOfCart(product, 1);
+        currentCart.addToCart(content);
+        cartAmountCount();
+        
+    });
+
     //Lägger till elementen till en förälder
-    imageWrapper.appendChild(prodImage);
-    prodDiv.appendChild(imageWrapper);
+    prodDiv.appendChild(prodImage);
     prodDiv.appendChild(prodName);
     prodDiv.appendChild(prodPrice);
-    prodDiv.appendChild(buyButton);
+    prodWrapper.appendChild(prodDiv);
+    prodWrapper.appendChild(buyButton);
 
-    document.getElementById("product-wrapper").appendChild(prodDiv);
+    document.getElementById("product-wrapper").appendChild(prodWrapper);
 }
 
-// Soreterar på pris högt-lågt
-function sortExp(){
-    gameList.sort(function(a, b){return b.price - a.price});
-    if (currentDisplay == "all"){
+// Funktioner som sorterar på pris
+function sortExp() {
+    gameList.sort(function (a, b) {
+        return b.price - a.price;
+    });
+    if (currentDisplay == "all") {
         showAllCategories();
-    }else{
+    } else {
         chooseCategory(currentDisplay);
     }
     document.getElementById("sortExp").classList.add("chosenSort");
     document.getElementById("sortCheap").classList.remove("chosenSort");
 }
 
-function sortCheap(){
-    gameList.sort(function(b, a){return b.price - a.price});
-    if (currentDisplay == "all"){
+function sortCheap() {
+    gameList.sort(function (b, a) {
+        return b.price - a.price;
+    });
+    if (currentDisplay == "all") {
         showAllCategories();
-    }else{
+    } else {
         chooseCategory(currentDisplay);
     }
     document.getElementById("sortCheap").classList.add("chosenSort");
@@ -225,4 +247,29 @@ function sortCheap(){
 function clickOnProd(e) {
     sessionStorage.setItem("game", JSON.stringify(e));
     location.href = "http://localhost:1234/pages/productinfo.html";
+}
+
+function cartAmountCount() {
+    //let cartList: ContentOfCart[] = JSON.parse(sessionStorage.getItem("cartList"));
+    let cart = new Cart();
+
+    if (cart.cartList.length > 0) {
+        let cartAmounter: HTMLElement = document.createElement("i");
+        let cartAmountSpan: HTMLSpanElement = document.createElement("span");
+
+        cartAmounter.className = "cartAmounter fa fa-circle";
+        //cartAmounter.ariaHidden = "true";
+
+        let totaltSum: number = 0;
+        for (let u = 0; u < cart.cartList.length; u++) {
+            totaltSum += cart.cartList[u].amount;
+        }
+
+        cartAmountSpan.innerHTML = JSON.stringify(totaltSum );
+
+        let shopCart: HTMLElement = document.getElementById("prodCart");
+
+        cartAmounter.appendChild(cartAmountSpan);
+        shopCart.appendChild(cartAmounter);
+    }
 }
