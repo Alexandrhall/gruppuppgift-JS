@@ -144,7 +144,6 @@ window.onload = function () {
 
     //Standard display
     showAllCategories();
-    // cartAmountCount();
     currentCart.cartAmountCount();
 };
 
@@ -169,7 +168,6 @@ function chooseCategory(e: string) {
     }
     //Sätter variabeln till den valda kategorin
     currentDisplay = e;
-    // cartAmountCount();
     currentCart.cartAmountCount();
 }
 
