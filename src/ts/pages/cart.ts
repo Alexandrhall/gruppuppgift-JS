@@ -61,7 +61,6 @@ function createHTML() {
         inputAmount.id = "valueAmount" + (i + 1);
         inputAmount.type = "number";
         inputAmount.min = "1";
-        inputAmount.max = "9";
         inputAmount.value = AmountString;
 
         inputAmount.addEventListener("blur", () => {

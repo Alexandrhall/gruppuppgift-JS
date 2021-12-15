@@ -131,5 +131,8 @@ body {
             background-color: #1f466b;
             transition: all 0.2s ease;
         }
+        &:active {
+            background-color: black;
+        }
     }
 }
