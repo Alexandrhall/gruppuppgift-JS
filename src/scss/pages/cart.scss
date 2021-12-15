@@ -6,12 +6,13 @@ html {
 
 main {
     @include mixins.flex-col;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     #checkoutButton {
         @include mixins.button;
         width: 30%;
         height: 40px;
+        margin-bottom: 20px;
     }
 
     #cartWrapper {
