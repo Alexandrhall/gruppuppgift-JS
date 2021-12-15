@@ -204,7 +204,6 @@ function createHTML(i: number) {
         let content = new ContentOfCart(product, 1);
         currentCart.addToCart(content);
         cartAmountCount();
-        
     });
 
     //Lägger till elementen till en förälder
@@ -215,7 +214,7 @@ function createHTML(i: number) {
     prodWrapper.appendChild(prodDiv);
     prodWrapper.appendChild(buyButton);
 
-    document.getElementById("centering-wrapper").appendChild(prodWrapper);
+    document.getElementById("product-wrapper").appendChild(prodWrapper);
 }
 
 // Funktioner som sorterar på pris
