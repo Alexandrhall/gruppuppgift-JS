@@ -214,7 +214,7 @@ function createHTML(i: number) {
     prodWrapper.appendChild(prodDiv);
     prodWrapper.appendChild(buyButton);
 
-    document.getElementById("product-wrapper").appendChild(prodWrapper);
+    document.getElementById("centering-wrapper").appendChild(prodWrapper);
 }
 
 // Funktioner som sorterar på pris

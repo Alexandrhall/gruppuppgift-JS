@@ -1,13 +1,5 @@
 @use "mixins";
 
-html {
-    color: black;
-}
-
-body {
-    margin: 0;
-}
-
 .sort-wrapper {
     display: flex;
     justify-content: center;
@@ -72,8 +64,9 @@ body {
         flex-direction: row;
         width: 80%;
         flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: flex-center;
+        justify-content: flex-start;
+        //justify-content: space-evenly;
+        align-content: space-between;
     }
 
     @include mixins.desktop-only {
