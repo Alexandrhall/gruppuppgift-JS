@@ -111,16 +111,9 @@ body {
             width: 80%;
         }
 
-        .game-description {
-            width: 90%;
-
-            @include mixins.desktop-only {
-                height: 80px;
-            }
-        }
-
         .price {
             font-size: 14pt;
+            margin-bottom: 10px;
         }
     }
     .buy-button {
