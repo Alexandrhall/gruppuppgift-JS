@@ -11,6 +11,7 @@ window.onload = function () {
         .addEventListener("click", goToCheckout);
 
     createHTML();
+    cart.cartAmountCount();
 };
 
 function goToCheckout() {
@@ -67,6 +68,7 @@ function createHTML() {
         inputAmount.addEventListener("blur", () => {
             cart.addAmount(i);
             createHTML();
+            cart.cartAmountCount();
         });
 
         let totaltSpan: HTMLSpanElement = document.createElement(
