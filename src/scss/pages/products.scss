@@ -87,11 +87,6 @@ body {
         box-shadow: 1px 2px 5px 3px lightgrey;
     }
 
-    .gameWrapper {
-        // flex-grow: 1;
-        // max-width: 250px;
-    }
-
     .game-div {
         @include mixins.flex-col;
         background-color: white;
@@ -132,8 +127,9 @@ body {
         @include mixins.button;
         height: 38px;
         width: 100%;
-        max-width: 235px;
-        // display: block;
-        // margin: 0 auto;
+        &:hover {
+            background-color: #1f466b;
+            transition: all 0.2s ease;
+        }
     }
 }

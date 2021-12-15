@@ -33,7 +33,6 @@ function createHTML() {
     number.type = "number";
     number.value = "1";
     number.min = "1";
-    number.max = "9";
     let button: HTMLButtonElement = document.createElement("button");
 
     name.innerHTML = game.name;
