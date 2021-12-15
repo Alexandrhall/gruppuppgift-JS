@@ -1,9 +1,5 @@
 @use "mixins";
 
-html {
-    background-color: blue;
-}
-
 main {
     @include mixins.flex-col;
     // margin-bottom: 20px;
