@@ -211,6 +211,7 @@ function createHTML(i: number) {
     prodDiv.appendChild(prodImage);
     prodDiv.appendChild(prodName);
     prodDiv.appendChild(prodPrice);
+    
     prodWrapper.appendChild(prodDiv);
     prodWrapper.appendChild(buyButton);
 
