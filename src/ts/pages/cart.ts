@@ -18,13 +18,13 @@ function goToCheckout() {
 }
 
 function createHTML() {
-    
-    let cartWrapper: HTMLDivElement = document.getElementById("cartWrapper") as HTMLDivElement;
+    let cartWrapper: HTMLDivElement = document.getElementById(
+        "cartWrapper"
+    ) as HTMLDivElement;
     cartWrapper.innerHTML = "";
 
-    
     let total: number = 0;
-    
+
     for (let i = 0; i < cart.cartList.length; i++) {
         let itemDiv: HTMLDivElement = document.createElement("div");
         itemDiv.className = "cartItem";
@@ -60,6 +60,8 @@ function createHTML() {
         let inputAmount: HTMLInputElement = document.createElement("input");
         inputAmount.id = "valueAmount" + (i + 1);
         inputAmount.type = "number";
+        inputAmount.min = "1";
+        inputAmount.max = "9";
         inputAmount.value = AmountString;
 
         inputAmount.addEventListener("blur", () => {

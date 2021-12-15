@@ -204,7 +204,6 @@ function createHTML(i: number) {
         let content = new ContentOfCart(product, 1);
         currentCart.addToCart(content);
         cartAmountCount();
-        
     });
 
     //Lägger till elementen till en förälder
@@ -249,7 +248,7 @@ function clickOnProd(e) {
     location.href = "http://localhost:1234/pages/productinfo.html";
 }
 
-function cartAmountCount() {
+export function cartAmountCount() {
     //let cartList: ContentOfCart[] = JSON.parse(sessionStorage.getItem("cartList"));
     let cart = new Cart();
 
@@ -265,7 +264,7 @@ function cartAmountCount() {
             totaltSum += cart.cartList[u].amount;
         }
 
-        cartAmountSpan.innerHTML = JSON.stringify(totaltSum );
+        cartAmountSpan.innerHTML = JSON.stringify(totaltSum);
 
         let shopCart: HTMLElement = document.getElementById("prodCart");
 
