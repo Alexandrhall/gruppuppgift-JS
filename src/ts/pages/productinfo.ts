@@ -2,12 +2,12 @@ import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
 import { Cart } from "../pages/models/Cart";
 import { ContentOfCart } from "./models/ContentOfCart";
-import { cartAmountCount } from "./products";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
     loadProd();
     createHTML();
+    currentCart.cartAmountCount();
 };
 
 function loadProd() {
@@ -45,7 +45,7 @@ function createHTML() {
     button.addEventListener("click", () => {
         let content = new ContentOfCart(game, parseInt(number.value));
         currentCart.addToCart(content);
-        cartAmountCount();
+        currentCart.cartAmountCount();
     });
 
     prodInfo.appendChild(img);
