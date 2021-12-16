@@ -114,15 +114,16 @@ let gameList: Game[] = [
 let currentCart = new Cart();
 
 //Variabel som håller koll på vilken kategori som är vald
-let currentDisplay: string = "all";
+let currentDisplay: string = sessionStorage.getItem("display") || "all";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
 
     //Eventlisteners kategorier
-    document
-        .getElementById("catAll")
-        .addEventListener("click", showAllCategories);
+    document.getElementById("catAll").addEventListener("click", ()=>{
+        chooseCategory("all");
+    });
+
     document.getElementById("catBoard").addEventListener("click", () => {
         chooseCategory("board");
     });
@@ -152,23 +153,35 @@ function dropDown() {
 }
 
 function showAllCategories() {
-    document.getElementById("product-wrapper").innerHTML = "";
-    for (let i = 0; i < gameList.length; i++) {
-        createHTML(i);
+    currentDisplay = sessionStorage.getItem("display");
+    if(currentDisplay === "all"){
+        document.getElementById("product-wrapper").innerHTML = "";
+        for (let i = 0; i < gameList.length; i++) {
+            createHTML(i);
+        }
+        currentDisplay = "all";
+        sessionStorage.setItem("display", currentDisplay);
+    }else{
+        chooseCategory(currentDisplay);
     }
-    currentDisplay = "all";
 }
 
 function chooseCategory(e: string) {
     document.getElementById("product-wrapper").innerHTML = "";
-    for (let i = 0; i < gameList.length; i++) {
-        if (gameList[i].category == e) {
-            createHTML(i);
-        }
-    }
-    //Sätter variabeln till den valda kategorin
-    currentDisplay = e;
     currentCart.cartAmountCount();
+    if( e != "all"){
+        for (let i = 0; i < gameList.length; i++) {
+            if (gameList[i].category == e) {
+                createHTML(i);
+            }
+        }
+        //Sätter variabeln till den valda kategorin
+
+        sessionStorage.setItem("display", e);
+    }else{
+        sessionStorage.setItem("display", "all");
+        showAllCategories();
+    }
 }
 
 function createHTML(i: number) {

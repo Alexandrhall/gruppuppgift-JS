@@ -1,5 +1,6 @@
 import { logToHome } from "../main";
 import { Cart } from "../pages/models/Cart";
+import { categoryListeners } from "../main";
 
 let cart = new Cart();
 
@@ -12,6 +13,7 @@ window.onload = function () {
 
     createHTML();
     cart.cartAmountCount();
+    categoryListeners();
 };
 
 function goToCheckout() {
