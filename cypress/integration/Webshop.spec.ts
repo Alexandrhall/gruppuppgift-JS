@@ -65,4 +65,25 @@ describe("Webshop list test", () => {
 
         cy.get(".gameWrapper").should("have.length", 7);
     });
+    it("click on all games and go to checkout", () => {
+        cy.visit("http://localhost:1234");
+
+        cy.get("#continueButton").click();
+
+        cy.get("#prodCart").click();
+
+        cy.get(".fa-trash-o").click();
+
+        cy.get("#catAll").click();
+
+        cy.get(".buy-button:first").click();
+
+        cy.get("#prodCart").click();
+
+        cy.get(".cartItem").should("have.length", 1);
+
+        cy.get("#checkoutButton").click();
+
+        cy.get("#valueAmount1").should("have.value", 1);
+    });
 });
