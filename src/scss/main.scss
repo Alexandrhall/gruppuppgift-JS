@@ -67,10 +67,13 @@ html {
         font-size: 15px;
         span {
             position: absolute;
-            right: 4px;
-            top: 2px;
+            right: 5px;
+            top: 3px;
             color: white;
             font-size: 9px;
+        }
+        .big {
+            right: 3px;
         }
     }
     .navMenu {

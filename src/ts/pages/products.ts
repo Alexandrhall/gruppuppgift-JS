@@ -120,7 +120,7 @@ window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
 
     //Eventlisteners kategorier
-    document.getElementById("catAll").addEventListener("click", ()=>{
+    document.getElementById("catAll").addEventListener("click", () => {
         chooseCategory("all");
     });
 
@@ -154,22 +154,21 @@ function dropDown() {
 
 function showAllCategories() {
     currentDisplay = sessionStorage.getItem("display");
-    if(currentDisplay === "all"){
+    if (currentDisplay === "all") {
         document.getElementById("product-wrapper").innerHTML = "";
         for (let i = 0; i < gameList.length; i++) {
             createHTML(i);
         }
         currentDisplay = "all";
         sessionStorage.setItem("display", currentDisplay);
-    }else{
+    } else {
         chooseCategory(currentDisplay);
     }
 }
 
 function chooseCategory(e: string) {
     document.getElementById("product-wrapper").innerHTML = "";
-    currentCart.cartAmountCount();
-    if( e != "all"){
+    if (e != "all") {
         for (let i = 0; i < gameList.length; i++) {
             if (gameList[i].category == e) {
                 createHTML(i);
@@ -178,7 +177,7 @@ function chooseCategory(e: string) {
         //Sätter variabeln till den valda kategorin
 
         sessionStorage.setItem("display", e);
-    }else{
+    } else {
         sessionStorage.setItem("display", "all");
         showAllCategories();
     }
@@ -217,14 +216,14 @@ function createHTML(i: number) {
         let content = new ContentOfCart(product, 1);
         currentCart.addToCart(content);
 
-        currentCart.cartAmountCount();
+        currentCart.cartAmountUpdate();
     });
 
     //Lägger till elementen till en förälder
     prodDiv.appendChild(prodImage);
     prodDiv.appendChild(prodName);
     prodDiv.appendChild(prodPrice);
-    
+
     prodWrapper.appendChild(prodDiv);
     prodWrapper.appendChild(buyButton);
 

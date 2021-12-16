@@ -1,7 +1,7 @@
 import { logToHome } from "../main";
 import { Cart } from "../pages/models/Cart";
 import { ContentOfCart } from "./models/ContentOfCart";
-import { categoryListeners } from "../main"
+import { categoryListeners } from "../main";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
@@ -45,7 +45,7 @@ function createHTML() {
     button.addEventListener("click", () => {
         let content = new ContentOfCart(game, parseInt(number.value));
         currentCart.addToCart(content);
-        currentCart.cartAmountCount();
+        currentCart.cartAmountUpdate();
     });
 
     prodInfo.appendChild(img);
