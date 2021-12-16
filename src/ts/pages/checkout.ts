@@ -43,18 +43,6 @@ function createHtml() {
 
       myCart.cartAmountCount();
     });
-    // inputAmount.addEventListener("blur", () => {
-    // cart.addAmount(i);
-    // createHTML();
-    // cart.cartAmountCount();
-    // });
-    // let totaltSpan: HTMLSpanElement = document.createElement(
-    // "span"
-    // ) as HTMLSpanElement;
-    // total += cart.cartList[i].game.price * cart.cartList[i].amount;
-    // let totalString: string = JSON.stringify(total);
-    // totaltSpan.innerHTML = totalString;
-
     trashFont.addEventListener("click", () => {
       myCart.removeIt(i);
       createHtml(); //* -------------------------------------------
@@ -79,14 +67,11 @@ function createHtml() {
 
 createHtml();
 
-// window.onload = function () {
 document.getElementById("log").addEventListener("click", logToHome);
 
 var forms = document.querySelectorAll(".needs-validation");
 
 console.log(forms);
-
-// Loop over them and prevent submission
 
 Array.prototype.slice
   .call(forms)
@@ -110,4 +95,3 @@ Array.prototype.slice
       false
     );
   });
-//};
