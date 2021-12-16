@@ -1,4 +1,4 @@
-// kolla så att det inte i krockar
+@use "mixins";
 i {
   margin-left: 10px;
 }
@@ -8,16 +8,57 @@ i {
   border-radius: 10px;
 }
 .productSumWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include mixins.flex-col();
   text-align: center;
+
   .productSum {
-    width: 50%;
-    background-color: rgb(228, 246, 246);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-color: rgb(222, 237, 238);
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
+    .prodDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .productHeading {
+        @include mixins.desktop-only() {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .imageAmountRapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include mixins.desktop-only() {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
   }
+  #productSumering > div {
+    @include mixins.desktop-only() {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+img {
+  width: 80px;
+  margin: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
