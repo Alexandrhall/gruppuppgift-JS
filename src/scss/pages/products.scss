@@ -1,16 +1,9 @@
 @use "mixins";
 
-html {
-    color: black;
-}
-
-body {
-    margin: 0;
-}
-
 .sort-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .prodSort {
         position: relative;
@@ -60,79 +53,89 @@ body {
     }
 }
 
-#product-wrapper {
-    @include mixins.flex-col;
+main {
+    // display: flex;
+    // //flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     margin: 0 auto;
+
+    @include mixins.tablets-only {
+        max-width: 85%;
+    }
+
+    @include mixins.desktop-only {
+        max-width: 1000px;
+    }
+}
+
+#product-wrapper{
+    display: inline-flex;
+    flex-direction: column;
     row-gap: 40px;
-    column-gap: 20px;
     padding: 30px;
     position: relative;
     z-index: 1;
 
     @include mixins.tablets-only {
         flex-direction: row;
-        width: 90%;
         flex-wrap: wrap;
-        column-gap: 50px;
+        column-gap: 20px;
+        justify-content: flex-start;
+        //justify-content: space-evenly;
+        align-content: space-between;
     }
 
     @include mixins.desktop-only {
-        justify-content: space-around;
         row-gap: 30px;
-        width: 80%;
-        max-width: 1000px;
+        column-gap: 20px;
     }
-
-    .game-div:hover {
-        box-shadow: 1px 2px 5px 3px lightgrey;
-    }
-
-    .game-div {
-        @include mixins.flex-col;
-        background-color: white;
-        width: 85%;
-        border-radius: 5px;
-        row-gap: 10px;
-
-        @include mixins.tablets-only {
-            width: 300px;
+        .game-div:hover {
+            box-shadow: 1px 2px 5px 3px lightgrey;
         }
-
-        @include mixins.desktop-only {
-            width: 200px;
-        }
-
-        .game-name {
-            font-weight: bold;
-            margin: 0;
-        }
-
-        img {
-            width: 80%;
-        }
-
-        .game-description {
-            width: 90%;
-
+    
+        .game-div {
+            @include mixins.flex-col;
+            background-color: white;
+            width: 100%;
+            border-radius: 5px;
+            row-gap: 10px;
+    
+            @include mixins.tablets-only {
+                width: 300px;
+            }
+    
             @include mixins.desktop-only {
-                height: 80px;
+                width: 200px;
+            }
+    
+            .game-name {
+                font-weight: bold;
+                margin: 0;
+            }
+    
+            img {
+                width: 80%;
+                margin-top: 10px;
+            }
+    
+            .price {
+                font-size: 14pt;
+                margin-bottom: 10px;
             }
         }
-
-        .price {
-            font-size: 14pt;
-        }
-    }
+        
     .buy-button {
         @include mixins.button;
         height: 38px;
         width: 100%;
         &:hover {
+            cursor: pointer;
             background-color: #1f466b;
             transition: all 0.2s ease;
         }
         &:active {
-            background-color: black;
+            box-shadow:         inset 0 0 10px #373b50;
         }
     }
 }

@@ -203,6 +203,7 @@ function createHTML(i: number) {
     buyButton.addEventListener("click", () => {
         let content = new ContentOfCart(product, 1);
         currentCart.addToCart(content);
+
         currentCart.cartAmountCount();
     });
 
@@ -210,6 +211,7 @@ function createHTML(i: number) {
     prodDiv.appendChild(prodImage);
     prodDiv.appendChild(prodName);
     prodDiv.appendChild(prodPrice);
+    
     prodWrapper.appendChild(prodDiv);
     prodWrapper.appendChild(buyButton);
 
