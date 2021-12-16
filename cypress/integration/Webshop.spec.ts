@@ -25,6 +25,15 @@ describe("Webshop list test", () => {
 
         cy.get(".cartItem").should("have.length", 0);
     });
+    it("should go to right productinfo", () => {
+        cy.visit("http://localhost:1234");
+
+        cy.get("#continueButton").click();
+
+        cy.get(".game-div:first").click();
+
+        cy.get("h3:first").should("have.text", "Monopol");
+    });
     it("should get to productinfo and add to cart", () => {
         cy.visit("http://localhost:1234");
 
