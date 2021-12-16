@@ -84,9 +84,6 @@ export class Cart {
         let cartAmountSpan: HTMLSpanElement = document.getElementById(
             "cartSpan"
         ) as HTMLSpanElement;
-        let cartAmounter: HTMLElement = document.getElementById(
-            "cartA"
-        ) as HTMLElement;
 
         let totaltSum: number = 0;
 
