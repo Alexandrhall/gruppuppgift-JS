@@ -43,10 +43,10 @@ function createHTML() {
         prodName.innerHTML = cart.cartList[i].game.name;
         let prodPrice: HTMLSpanElement = document.createElement("span");
         prodPrice.innerHTML = cart.cartList[i].game.price + " :-";
-        let textDiv:HTMLDivElement = document.createElement("div");
+        let textDiv: HTMLDivElement = document.createElement("div");
         textDiv.className = "textDiv";
-        let clickableDiv:HTMLDivElement = document.createElement("div");
-        clickableDiv.className ="clickDiv";
+        let clickableDiv: HTMLDivElement = document.createElement("div");
+        clickableDiv.className = "clickDiv";
 
         prodImageWrapper.appendChild(prodImage);
 
@@ -69,7 +69,7 @@ function createHTML() {
         inputAmount.addEventListener("blur", () => {
             cart.addAmount(i);
             createHTML();
-            cart.cartAmountCount();
+            cart.cartAmountUpdate();
         });
 
         let totaltSpan: HTMLSpanElement = document.createElement(
