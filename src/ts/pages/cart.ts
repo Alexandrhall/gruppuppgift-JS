@@ -70,6 +70,10 @@ function createHTML() {
             cart.cartAmountCount();
         });
 
+        prodImageWrapper.addEventListener("click",() => { 
+            
+        });
+
         let totaltSpan: HTMLSpanElement = document.createElement(
             "span"
         ) as HTMLSpanElement;

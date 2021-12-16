@@ -26,20 +26,47 @@ main {
                 width: 70%;
             }
 
+            @include mixins.desktop-only{
+                max-width: 800px;
+            }
+            
             .prodImage-wrapper {
                 width: 100px;
                 img {
                     width: 100%;
                 }
+
+                @include mixins.tablets-only{
+                    width: 140px;
+                }
             }
 
             .prodInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                row-gap: 20px;
                 width: 200px;
                 
+                .textDiv{
+                    display: flex;
+                    justify-content: space-between;
 
-                input{
-                    width: 40px;
+                    h3{
+                        margin: 0;
+                    }
                 }
+
+                .clickDiv{
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    input{
+                        width: 40px;
+                    }
+                }
+
             }
         }
     }
