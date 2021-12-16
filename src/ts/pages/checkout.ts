@@ -36,6 +36,25 @@ function createHtml() {
     inputAmount.type = "number";
     inputAmount.value = AmountString;
 
+    inputAmount.addEventListener("blur", () => {
+      myCart.addAmount(i);
+
+      createHtml();
+
+      myCart.cartAmountCount();
+    });
+    // inputAmount.addEventListener("blur", () => {
+    // cart.addAmount(i);
+    // createHTML();
+    // cart.cartAmountCount();
+    // });
+    // let totaltSpan: HTMLSpanElement = document.createElement(
+    // "span"
+    // ) as HTMLSpanElement;
+    // total += cart.cartList[i].game.price * cart.cartList[i].amount;
+    // let totalString: string = JSON.stringify(total);
+    // totaltSpan.innerHTML = totalString;
+
     trashFont.addEventListener("click", () => {
       myCart.removeIt(i);
       createHtml(); //* -------------------------------------------
@@ -57,6 +76,7 @@ function createHtml() {
   document.getElementById("vafan").innerHTML =
     "Totalpris: " + priceProduct.toString() + ":-";
 }
+
 createHtml();
 
 // window.onload = function () {
