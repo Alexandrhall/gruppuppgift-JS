@@ -1,8 +1,12 @@
+
 @use "mixins";
 i {
   margin-left: 10px;
+
 }
+
 .container {
+
   background-color: rgb(174, 213, 214);
   padding: 20px;
   border-radius: 10px;
@@ -57,4 +61,5 @@ i {
 img {
   width: 80px;
   margin: 10px;
+
 }

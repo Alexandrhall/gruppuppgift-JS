@@ -5,3 +5,5 @@ window.onload = function(){
 function enterShop(){
     window.location.href = "../pages/products.html";
 }
+
+sessionStorage.setItem("display", "all");
