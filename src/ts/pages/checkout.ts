@@ -40,6 +40,7 @@ function createHtml() {
         let inputAmount: HTMLInputElement = document.createElement("input");
         inputAmount.id = "valueAmount" + (i + 1);
         inputAmount.type = "number";
+        inputAmount.min = "1";
         inputAmount.value = AmountString;
 
         inputAmount.addEventListener("blur", () => {
