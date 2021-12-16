@@ -28,6 +28,11 @@ html {
     .prodSort {
         color: white;
     }
+
+    .currentSort{
+        text-decoration: underline;
+    }
+
     .prodSort:hover {
         color: black;
         cursor: pointer;
