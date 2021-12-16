@@ -2,7 +2,6 @@
 
 main {
     @include mixins.flex-col;
-    // margin-bottom: 20px;
 
     #checkoutButton {
         @include mixins.button;
@@ -23,6 +22,10 @@ main {
             border-radius: 5px;
             margin-bottom: 20px;
 
+            @include mixins.tablets-only{
+                width: 70%;
+            }
+
             .prodImage-wrapper {
                 width: 100px;
                 img {
@@ -31,7 +34,12 @@ main {
             }
 
             .prodInfo {
-                width: 120px;
+                width: 200px;
+                
+
+                input{
+                    width: 40px;
+                }
             }
         }
     }
