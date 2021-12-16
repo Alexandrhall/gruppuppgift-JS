@@ -114,7 +114,7 @@ let gameList: Game[] = [
 let currentCart = new Cart();
 
 //Variabel som håller koll på vilken kategori som är vald
-let currentDisplay: string = "all";
+let currentDisplay: string = sessionStorage.getItem("display") || "all";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
@@ -157,6 +157,8 @@ function showAllCategories() {
         createHTML(i);
     }
     currentDisplay = "all";
+    sessionStorage.setItem("display", currentDisplay);
+
 }
 
 function chooseCategory(e: string) {
@@ -168,6 +170,7 @@ function chooseCategory(e: string) {
     }
     //Sätter variabeln till den valda kategorin
     currentDisplay = e;
+    sessionStorage.setItem("display", currentDisplay);
     currentCart.cartAmountCount();
 }
 
@@ -220,6 +223,7 @@ function createHTML(i: number) {
 
 // Funktioner som sorterar på pris
 function sortExp() {
+    currentDisplay = sessionStorage.getItem("display");
     gameList.sort(function (a, b) {
         return b.price - a.price;
     });
@@ -233,6 +237,7 @@ function sortExp() {
 }
 
 function sortCheap() {
+    currentDisplay = sessionStorage.getItem("display");
     gameList.sort(function (b, a) {
         return b.price - a.price;
     });
