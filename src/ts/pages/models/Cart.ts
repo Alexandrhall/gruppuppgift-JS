@@ -99,4 +99,9 @@ export class Cart {
 
         cartAmountSpan.innerHTML = JSON.stringify(totaltSum);
     }
+
+    removeItCheck(i: number) {
+        this.cartList.splice(i, 1);
+        sessionStorage.setItem("cartList", JSON.stringify(this.cartList));
+    }
 }
