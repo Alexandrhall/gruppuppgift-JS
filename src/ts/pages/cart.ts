@@ -17,7 +17,11 @@ window.onload = function () {
 };
 
 function goToCheckout() {
-    location.href = "http://localhost:1234/pages/checkout.html";
+    if (cart.cartList.length > 0){
+        location.href = "http://localhost:1234/pages/checkout.html";
+    }else{
+        alert("Du måste ha minst en vara i varukorgen för att gå vidare till kassan!");
+    }
 }
 
 function createHTML() {
