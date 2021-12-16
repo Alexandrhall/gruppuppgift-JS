@@ -25,4 +25,13 @@ $gray: #E5E5E5;
     color: white;
     border-radius: 5px;
     border-style: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #1f466b;
+        transition: all 0.2s ease;
+    }
+    &:active {
+        background-color: black;
+    }    
 }
