@@ -12,8 +12,8 @@ window.onload = function () {
         .addEventListener("click", goToCheckout);
 
     createHTML();
-    cart.cartAmountCount();
     categoryListeners();
+    cart.cartAmountCount();
 };
 
 function goToCheckout() {
