@@ -1,3 +1,5 @@
+@use "mixins";
+
 body{
     display: flex;
     flex-direction: column;
@@ -36,13 +38,9 @@ main{
     }
 
     #continueButton{
+        @include mixins.button;
         width: 200px;
         height: 50px;
-        background-color: #5E7E9B;
-        border-radius: 10px;
-        border: none;
-        color: white;
-        cursor: pointer;
         text-transform: uppercase;
 
         .fasfa-chevron-right{

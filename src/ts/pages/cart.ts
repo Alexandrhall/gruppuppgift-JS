@@ -41,11 +41,12 @@ function createHTML() {
         prodName.innerHTML = cart.cartList[i].game.name;
         let prodPrice: HTMLSpanElement = document.createElement("span");
         prodPrice.innerHTML = cart.cartList[i].game.price + " :-";
+        let textDiv:HTMLDivElement = document.createElement("div");
+        textDiv.className = "textDiv";
+        let clickableDiv:HTMLDivElement = document.createElement("div");
+        clickableDiv.className ="clickDiv";
 
         prodImageWrapper.appendChild(prodImage);
-
-        infoDiv.appendChild(prodName);
-        infoDiv.appendChild(prodPrice);
 
         let trashFont = document.createElement("i");
         trashFont.className = "fa fa-trash-o";
@@ -77,8 +78,14 @@ function createHTML() {
         let totalString: string = JSON.stringify(total);
         totaltSpan.innerHTML = totalString;
 
-        infoDiv.appendChild(trashFont);
-        infoDiv.appendChild(inputAmount);
+        textDiv.appendChild(prodName);
+        textDiv.appendChild(prodPrice);
+        clickableDiv.appendChild(inputAmount);
+        clickableDiv.appendChild(trashFont);
+
+        infoDiv.appendChild(textDiv);
+        infoDiv.appendChild(clickableDiv);
+
         itemDiv.appendChild(prodImageWrapper);
         itemDiv.appendChild(infoDiv);
         cartWrapper.appendChild(itemDiv);
@@ -89,5 +96,6 @@ function createHTML() {
     ) as HTMLSpanElement;
     let totalString: string = JSON.stringify(total);
     totaltSpan.innerHTML = "Totalpris: " + totalString + ":-";
+    totaltSpan.className = "totalSum";
     cartWrapper.appendChild(totaltSpan);
 }

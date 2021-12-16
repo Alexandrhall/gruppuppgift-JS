@@ -2,7 +2,6 @@
 
 main {
     @include mixins.flex-col;
-    // margin-bottom: 20px;
 
     #checkoutButton {
         @include mixins.button;
@@ -23,16 +22,58 @@ main {
             border-radius: 5px;
             margin-bottom: 20px;
 
+            @include mixins.tablets-only{
+                width: 70%;
+            }
+
+            @include mixins.desktop-only{
+                max-width: 800px;
+            }
+            
             .prodImage-wrapper {
                 width: 100px;
                 img {
                     width: 100%;
                 }
+
+                @include mixins.tablets-only{
+                    width: 140px;
+                }
             }
 
             .prodInfo {
-                width: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                row-gap: 20px;
+                width: 200px;
+                
+                .textDiv{
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3{
+                        margin: 0;
+                    }
+                }
+
+                .clickDiv{
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    input{
+                        text-align: center;
+                        width: 50px;
+                    }
+                }
+
             }
+        }
+
+        .totalSum{
+            margin-bottom: 20px;
+            font-size: 1.4em;
         }
     }
 }
