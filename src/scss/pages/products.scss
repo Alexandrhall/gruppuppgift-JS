@@ -54,22 +54,18 @@
 }
 
 main {
-    // display: flex;
-    // //flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     margin: 0 auto;
 
     @include mixins.tablets-only {
-        max-width: 85%;
+        max-width: 680px;
     }
 
     @include mixins.desktop-only {
-        max-width: 1000px;
+        max-width: 920px;
     }
 }
 
-#product-wrapper{
+#product-wrapper {
     display: inline-flex;
     flex-direction: column;
     row-gap: 40px;
@@ -82,7 +78,6 @@ main {
         flex-wrap: wrap;
         column-gap: 20px;
         justify-content: flex-start;
-        //justify-content: space-evenly;
         align-content: space-between;
     }
 
@@ -90,41 +85,41 @@ main {
         row-gap: 30px;
         column-gap: 20px;
     }
-        .game-div:hover {
-            box-shadow: 1px 2px 5px 3px lightgrey;
+    .game-div:hover {
+        box-shadow: 1px 2px 5px 3px lightgrey;
+    }
+
+    .game-div {
+        @include mixins.flex-col;
+        background-color: white;
+        width: 100%;
+        border-radius: 5px;
+        row-gap: 10px;
+
+        @include mixins.tablets-only {
+            width: 300px;
         }
-    
-        .game-div {
-            @include mixins.flex-col;
-            background-color: white;
-            width: 100%;
-            border-radius: 5px;
-            row-gap: 10px;
-    
-            @include mixins.tablets-only {
-                width: 300px;
-            }
-    
-            @include mixins.desktop-only {
-                width: 200px;
-            }
-    
-            .game-name {
-                font-weight: bold;
-                margin: 0;
-            }
-    
-            img {
-                width: 80%;
-                margin-top: 10px;
-            }
-    
-            .price {
-                font-size: 14pt;
-                margin-bottom: 10px;
-            }
+
+        @include mixins.desktop-only {
+            width: 200px;
         }
-        
+
+        .game-name {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        img {
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+    }
+
     .buy-button {
         @include mixins.button;
         height: 38px;

@@ -8,6 +8,7 @@ html {
     font-family: "Oxygen", sans-serif;
     background-color: white;
     scroll-behavior: smooth;
+    font-size: 12pt;
     body {
         margin: 0;
     }
@@ -29,7 +30,7 @@ html {
         color: white;
     }
 
-    .currentSort{
+    .currentSort {
         color: black;
     }
 
@@ -60,7 +61,7 @@ html {
 
     .fa-shopping-cart {
         margin-top: 28px;
-        font-size: 24pt;
+        font-size: 2rem;
         cursor: pointer;
         position: relative;
     }
@@ -75,7 +76,7 @@ html {
             right: 5px;
             top: 3px;
             color: white;
-            font-size: 9px;
+            font-size: 0.55em;
         }
         .big {
             right: 3px;
@@ -164,7 +165,7 @@ html {
     margin-top: 10px;
     height: 120px;
     padding: 2px;
-    font-size: 12pt;
+    font-size: 1rem;
     color: black;
     display: flex;
     justify-content: center;
