@@ -1,6 +1,11 @@
 import { Modal } from "bootstrap";
 import { logToHome } from "../main";
 import { Cart } from "../pages/models/Cart";
+import { categoryListeners } from "../main";
+
+window.onload = function () {
+    categoryListeners();
+};
 
 let myCart = new Cart();
 function createHtml() {
