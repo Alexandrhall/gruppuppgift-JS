@@ -1,15 +1,21 @@
+import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
+import { Cart } from "../pages/models/Cart";
+import { ContentOfCart } from "./models/ContentOfCart";
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
     loadProd();
     createHTML();
+    currentCart.cartAmountCount();
 };
 
 function loadProd() {
     let game = JSON.parse(sessionStorage.getItem("game"));
     console.log(game);
 }
+
+let currentCart = new Cart();
 
 function createHTML() {
     let game = JSON.parse(sessionStorage.getItem("game"));
@@ -26,6 +32,7 @@ function createHTML() {
     let number: HTMLInputElement = document.createElement("input");
     number.type = "number";
     number.value = "1";
+    number.min = "1";
     let button: HTMLButtonElement = document.createElement("button");
 
     name.innerHTML = game.name;
@@ -33,6 +40,12 @@ function createHTML() {
     price.innerHTML = game.price + ":-";
     description.innerHTML = game.description;
     button.innerHTML = "Lägg till i varukorgen";
+
+    button.addEventListener("click", () => {
+        let content = new ContentOfCart(game, parseInt(number.value));
+        currentCart.addToCart(content);
+        currentCart.cartAmountCount();
+    });
 
     prodInfo.appendChild(img);
     infoWrap.appendChild(name);

@@ -124,16 +124,18 @@ main {
                 margin-bottom: 10px;
             }
         }
-        .buy-button {
-            @include mixins.button;
-            height: 38px;
-            width: 100%;
-    
-        }
-        .buy-button:hover{
+        
+    .buy-button {
+        @include mixins.button;
+        height: 38px;
+        width: 100%;
+        &:hover {
             cursor: pointer;
+            background-color: #1f466b;
+            transition: all 0.2s ease;
         }
-        .buy-button:active{
+        &:active {
             box-shadow:         inset 0 0 10px #373b50;
         }
+    }
 }
