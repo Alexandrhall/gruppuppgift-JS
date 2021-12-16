@@ -95,4 +95,28 @@ describe("Webshop list test", () => {
 
         cy.get("#valueAmount1").should("have.value", 1);
     });
+        it("should sort price low to high", () => {
+            cy.visit("http://localhost:1234");
+    
+            cy.get("#continueButton").click();
+    
+            cy.get("#dropdownButton").click();
+    
+            cy.get("#sortCheap").click();
+    
+            cy.get(".price:first").should("have.text", "49:-");
+    
+        });
+        it("should sort price high to low", () => {
+            cy.visit("http://localhost:1234");
+    
+            cy.get("#continueButton").click();
+    
+            cy.get("#dropdownButton").click();
+    
+            cy.get("#sortExp").click();
+    
+            cy.get(".price:first").should("have.text", "349:-");
+    
+        });
 });
