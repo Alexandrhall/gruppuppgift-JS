@@ -114,7 +114,7 @@ let gameList: Game[] = [
 let currentCart = new Cart();
 
 //Variabel som håller koll på vilken kategori som är vald
-let currentDisplay: string = sessionStorage.getItem("display") || "all";
+let currentDisplay: string = sessionStorage.getItem("display");
 
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
