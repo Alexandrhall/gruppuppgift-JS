@@ -152,13 +152,17 @@ function dropDown() {
 }
 
 function showAllCategories() {
-    document.getElementById("product-wrapper").innerHTML = "";
-    for (let i = 0; i < gameList.length; i++) {
-        createHTML(i);
+    currentDisplay = sessionStorage.getItem("display");
+    if (currentDisplay != "all"){
+        chooseCategory(currentDisplay);
+    }else{
+        document.getElementById("product-wrapper").innerHTML = "";
+        for (let i = 0; i < gameList.length; i++) {
+            createHTML(i);
+        }
+        currentDisplay = "all";
+        sessionStorage.setItem("display", currentDisplay);
     }
-    currentDisplay = "all";
-    sessionStorage.setItem("display", currentDisplay);
-
 }
 
 function chooseCategory(e: string) {
@@ -223,7 +227,6 @@ function createHTML(i: number) {
 
 // Funktioner som sorterar på pris
 function sortExp() {
-    currentDisplay = sessionStorage.getItem("display");
     gameList.sort(function (a, b) {
         return b.price - a.price;
     });
@@ -237,7 +240,6 @@ function sortExp() {
 }
 
 function sortCheap() {
-    currentDisplay = sessionStorage.getItem("display");
     gameList.sort(function (b, a) {
         return b.price - a.price;
     });

@@ -6,19 +6,19 @@ window.onload = function () {};
 
 export function categoryListeners(){
     document.getElementById("catAll").addEventListener("click", ()=>{
-        goToCategory("all");
+        sessionStorage.setItem("display", "all");
+        location.href = "http://localhost:1234/pages/products.html";
     });
     document.getElementById("catBoard").addEventListener("click", ()=>{
-        goToCategory("board");
+        sessionStorage.setItem("display", "board");
+        location.href = "http://localhost:1234/pages/products.html";
     });
     document.getElementById("catCard").addEventListener("click", ()=>{
-        goToCategory("card");
+        sessionStorage.setItem("display", "card");
+        location.href = "http://localhost:1234/pages/products.html";
     });
     document.getElementById("catFamily").addEventListener("click", ()=>{
-        goToCategory("family");
+        sessionStorage.setItem("display", "family");
+        location.href = "http://localhost:1234/pages/products.html";
     });
-}
-
-export function goToCategory(e){
-    
 }
