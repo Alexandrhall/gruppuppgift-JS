@@ -123,7 +123,6 @@ window.onload = function () {
     document.getElementById("catAll").addEventListener("click", ()=>{
         chooseCategory("all");
     });
-
     document.getElementById("catBoard").addEventListener("click", () => {
         chooseCategory("board");
     });
@@ -153,6 +152,7 @@ function dropDown() {
 }
 
 function showAllCategories() {
+    document.getElementById("catAll").classList.add("currentSort");
     currentDisplay = sessionStorage.getItem("display");
     if(currentDisplay === "all"){
         document.getElementById("product-wrapper").innerHTML = "";
@@ -167,6 +167,7 @@ function showAllCategories() {
 }
 
 function chooseCategory(e: string) {
+    changeCategoryClass(e);
     document.getElementById("product-wrapper").innerHTML = "";
     currentCart.cartAmountCount();
     if( e != "all"){
@@ -261,4 +262,28 @@ function sortCheap() {
 function clickOnProd(e) {
     sessionStorage.setItem("game", JSON.stringify(e));
     location.href = "http://localhost:1234/pages/productinfo.html";
+}
+
+function changeCategoryClass(category:string){
+    if(category === "all"){
+        document.getElementById("catAll").classList.add("currentSort");
+        document.getElementById("catCard").classList.remove("currentSort");
+        document.getElementById("catBoard").classList.remove("currentSort");
+        document.getElementById("catFamily").classList.remove("currentSort");
+    }else if(category === "card"){
+        document.getElementById("catAll").classList.remove("currentSort");
+        document.getElementById("catCard").classList.add("currentSort");
+        document.getElementById("catBoard").classList.remove("currentSort");
+        document.getElementById("catFamily").classList.remove("currentSort");
+    }else if(category === "board"){
+        document.getElementById("catAll").classList.remove("currentSort");
+        document.getElementById("catCard").classList.remove("currentSort");
+        document.getElementById("catBoard").classList.add("currentSort");
+        document.getElementById("catFamily").classList.remove("currentSort");
+    }else if(category === "family"){
+        document.getElementById("catAll").classList.remove("currentSort");
+        document.getElementById("catCard").classList.remove("currentSort");
+        document.getElementById("catBoard").classList.remove("currentSort");
+        document.getElementById("catFamily").classList.add("currentSort");
+    }
 }
