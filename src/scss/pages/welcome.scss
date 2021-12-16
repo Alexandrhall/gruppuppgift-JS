@@ -1,52 +1,50 @@
 @use "mixins";
 
-body{
+body {
     display: flex;
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center;
     margin: 0;
     height: 100vh;
-    background-color: #EDF7D2;
+    background-color: #edf7d2;
     background-image: url("/src/assets/checkeredgrey.png");
     background-size: 180px;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     row-gap: 50px;
-    
 
-    #infoWrapper{
+    #infoWrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        #logoWrapper{
+        #logoWrapper {
             width: 300px;
-            img{
+            img {
                 width: 100%;
             }
         }
 
-        span{
+        span {
             font-size: 22pt;
             color: black;
+            text-align: center;
         }
     }
 
-    #continueButton{
+    #continueButton {
         @include mixins.button;
         width: 200px;
         height: 50px;
         text-transform: uppercase;
 
-        .fasfa-chevron-right{
+        .fasfa-chevron-right {
             font-size: 30pt;
         }
     }
-
-
 }
