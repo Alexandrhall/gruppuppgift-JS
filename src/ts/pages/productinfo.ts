@@ -1,4 +1,3 @@
-import { Game } from "../pages/models/Game";
 import { logToHome } from "../main";
 import { Cart } from "../pages/models/Cart";
 import { ContentOfCart } from "./models/ContentOfCart";

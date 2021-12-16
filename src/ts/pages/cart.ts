@@ -70,10 +70,6 @@ function createHTML() {
             cart.cartAmountCount();
         });
 
-        prodImageWrapper.addEventListener("click",() => { 
-            
-        });
-
         let totaltSpan: HTMLSpanElement = document.createElement(
             "span"
         ) as HTMLSpanElement;
@@ -100,5 +96,6 @@ function createHTML() {
     ) as HTMLSpanElement;
     let totalString: string = JSON.stringify(total);
     totaltSpan.innerHTML = "Totalpris: " + totalString + ":-";
+    totaltSpan.className = "totalSum";
     cartWrapper.appendChild(totaltSpan);
 }

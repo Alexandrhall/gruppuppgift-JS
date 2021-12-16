@@ -63,11 +63,17 @@ main {
                     justify-content: space-between;
 
                     input{
-                        width: 40px;
+                        text-align: center;
+                        width: 50px;
                     }
                 }
 
             }
+        }
+
+        .totalSum{
+            margin-bottom: 20px;
+            font-size: 1.4em;
         }
     }
 }
