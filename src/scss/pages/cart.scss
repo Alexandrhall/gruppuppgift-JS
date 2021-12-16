@@ -1,0 +1,79 @@
+@use "mixins";
+
+main {
+    @include mixins.flex-col;
+
+    #checkoutButton {
+        @include mixins.button;
+        width: 30%;
+        height: 40px;
+        margin-bottom: 20px;
+    }
+
+    #cartWrapper {
+        @include mixins.flex-col;
+        width: 100%;
+
+        .cartItem {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            margin-bottom: 20px;
+
+            @include mixins.tablets-only{
+                width: 70%;
+            }
+
+            @include mixins.desktop-only{
+                max-width: 800px;
+            }
+            
+            .prodImage-wrapper {
+                width: 100px;
+                img {
+                    width: 100%;
+                }
+
+                @include mixins.tablets-only{
+                    width: 140px;
+                }
+            }
+
+            .prodInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                row-gap: 20px;
+                width: 200px;
+                
+                .textDiv{
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3{
+                        margin: 0;
+                    }
+                }
+
+                .clickDiv{
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    input{
+                        text-align: center;
+                        width: 50px;
+                    }
+                }
+
+            }
+        }
+
+        .totalSum{
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+    }
+}

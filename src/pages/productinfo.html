@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="../scss/pages/productinfo.scss" rel="stylesheet" />
+        <link href="../scss/main.scss" rel="stylesheet" />
+        <script type="module" src="../ts/pages/productinfo.ts"></script>
+        <script
+            src="https://kit.fontawesome.com/9604976d4b.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <header class="headwrap">
+            <img class="loggo" id="log" src="../assetes/pictures/check.png"></img>
+            <div class="p-menu1">
+                <nav id="navbar" class="navigation" role="navigation">
+                    <input id="toggle1" type="checkbox" />
+                    <label class="hamburger1" for="toggle1">
+                        <div class="top"></div>
+                        <div class="meat"></div>
+                        <div class="bottom"></div>
+                    </label>
+
+                    <nav class="menu1">
+                        <a class="link1" href="../pages/products.html"
+                            ><p>Produkter</p></a
+                        >
+                        <a class="link1" href="../pages/cart.html"
+                            ><p>Varukorg</p></a
+                        >
+                        <a class="link1" href=""><p>Kontakt</p></a>
+                    </nav>
+                </nav>
+            </div>
+            <a href="../pages/cart.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true" id="prodCart"></i>
+            </a>
+        </header>
+        <main>
+            <div class="prodCat">
+                <span class="prodSort" id="catAll">Alla Spel</span>
+                <span class="prodSort" id="catBoard">Brädspel</span>
+                <span class="prodSort" id="catCard">Kortspel</span>
+                <span class="prodSort" id="catFamily">Familjespel</span>
+            </div>
+                    <div class="productWrap">
+                    <div class="productInfo" id="prodInfo"></div>
+                </div>
+        </main>
+        <footer>
+            <div class="footer-menu">
+                <ul>
+                    <li id="fotAll">Alla Spel</li>
+                    <li id="fotBoard">Brädspel</li>
+                    <li id="fotCard">Kortspel</li>
+                    <li id="fotFamily">Familjespel</li>
+               </ul>
+               </div>
+
+       <div class="contact">
+       <h3>Information</h3>
+       <ul>
+           <li>Kontakta oss</li>
+           <li>Frågor och svar</li>
+           <li>Leverans</li>
+           <li>Köpvilkor</li>
+       </ul>
+       </div>
+       <div class="media">
+       <i class="fa fa-facebook-square" style="font-size: 24px; color: white">
+       </i>
+       <i class="fa fa-linkedin-square" style="font-size: 24px; color: white">
+       </i>
+       <i class="fa fa-twitter-square" style="font-size: 24px; color: white">
+       </i>
+       </div>
+   </footer>
+   <div id="hide">
+   </div>
+    </body>
+</html>
