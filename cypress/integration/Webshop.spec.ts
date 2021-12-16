@@ -25,4 +25,44 @@ describe("Webshop list test", () => {
 
         cy.get(".cartItem").should("have.length", 0);
     });
+    it("should get to productinfo and add to cart", () => {
+        cy.visit("http://localhost:1234");
+
+        cy.get("#continueButton").click();
+
+        cy.get(".game-div:first").click();
+
+        cy.get("button").click();
+
+        cy.get("#prodCart").click();
+
+        cy.get(".cartItem").should("have.length", 1);
+    });
+    it("click on boardgames category", () => {
+        cy.visit("http://localhost:1234");
+
+        cy.get("#continueButton").click();
+
+        cy.get("#catBoard").click();
+
+        cy.get(".gameWrapper").should("have.length", 4);
+    });
+    it("click on card category", () => {
+        cy.visit("http://localhost:1234");
+
+        cy.get("#continueButton").click();
+
+        cy.get("#catCard").click();
+
+        cy.get(".gameWrapper").should("have.length", 2);
+    });
+    it("click on family category", () => {
+        cy.visit("http://localhost:1234");
+
+        cy.get("#continueButton").click();
+
+        cy.get("#catFamily").click();
+
+        cy.get(".gameWrapper").should("have.length", 7);
+    });
 });
