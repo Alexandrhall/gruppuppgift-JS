@@ -2,8 +2,6 @@ export function logToHome() {
     location.href = "http://localhost:1234/index.html";
 }
 
-window.onload = function () {};
-
 export function categoryListeners() {
     document.getElementById("catAll").addEventListener("click", () => {
         sessionStorage.setItem("display", "all");

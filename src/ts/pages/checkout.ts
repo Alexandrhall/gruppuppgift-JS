@@ -3,11 +3,12 @@ import { logToHome } from "../main";
 import { Cart } from "../pages/models/Cart";
 import { categoryListeners } from "../main";
 
+let myCart = new Cart();
+
 window.onload = function () {
     categoryListeners();
 };
 
-let myCart = new Cart();
 function createHtml() {
     let priceProduct = 0;
 

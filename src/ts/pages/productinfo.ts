@@ -3,6 +3,8 @@ import { Cart } from "../pages/models/Cart";
 import { ContentOfCart } from "./models/ContentOfCart";
 import { categoryListeners } from "../main";
 
+let currentCart = new Cart();
+
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
     loadProd();
@@ -16,7 +18,6 @@ function loadProd() {
     console.log(game);
 }
 
-let currentCart = new Cart();
 
 function createHTML() {
     let game = JSON.parse(sessionStorage.getItem("game"));
