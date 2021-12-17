@@ -76,8 +76,6 @@ document.getElementById("log").addEventListener("click", logToHome);
 
 var forms = document.querySelectorAll(".needs-validation");
 
-console.log(forms);
-
 Array.prototype.slice
     .call(forms)
 
@@ -87,16 +85,19 @@ Array.prototype.slice
             function (event) {
                 event.preventDefault();
                 event.stopPropagation();
-
-                if (form.checkValidity()) {
-                    let theModal = new Modal(
-                        document.getElementById("staticBackdrop")
-                    );
-                    theModal.show();
-                    console.log("modal kommer inte");
+                if (myCart.cartList.length >0){
+                    if (form.checkValidity()) {
+                        let theModal = new Modal(
+                            document.getElementById("staticBackdrop")
+                        );
+                        theModal.show();
+                        console.log("modal kommer inte");
+                    }
+                }else{
+                    alert("Du måste ha minst en vara i varukorgen för att genomföra en betalning!");
                 }
-
                 form.classList.add("was-validated");
+
             },
 
             false
