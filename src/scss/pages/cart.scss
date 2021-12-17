@@ -2,6 +2,8 @@
 
 main {
     @include mixins.flex-col;
+    min-height: 60vh;
+    
 
     #checkoutButton {
         @include mixins.button;

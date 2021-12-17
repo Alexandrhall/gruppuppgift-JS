@@ -3,6 +3,13 @@ import { categoryListeners, logToHome } from "../main";
 import { Cart } from "../pages/models/Cart";
 import { ContentOfCart } from "./models/ContentOfCart";
 
+//Variabel som innehåller nuvarande varukorg
+let currentCart = new Cart();
+
+//Variabel som håller koll på vilken kategori som är vald
+let currentDisplay: string = sessionStorage.getItem("display");
+
+//Skapar Game objekt
 let gameOne: Game = new Game(
     "Monopol",
     249,
@@ -94,6 +101,8 @@ let gameThirteen: Game = new Game(
     "Originalversionen av ett av världens populäraste spel! Du ska hitta på fantastiska men samtidigt trovärdiga förklaringar till vansinniga men ändå genuina svenska ord.",
     "family"
 );
+
+// Skapar lista av Game objekt
 let gameList: Game[] = [
     gameOne,
     gameTwo,
@@ -110,16 +119,10 @@ let gameList: Game[] = [
     gameThirteen,
 ];
 
-//Variabel som innehåller nuvarande varukorg
-let currentCart = new Cart();
-
-//Variabel som håller koll på vilken kategori som är vald
-let currentDisplay: string = sessionStorage.getItem("display");
-
 window.onload = function () {
     document.getElementById("log").addEventListener("click", logToHome);
 
-    // //Eventlisteners kategorier
+    //Eventlisteners kategorier
     categoryListeners();
 
     //Eventlisteners sortering
@@ -142,7 +145,6 @@ function dropDown() {
 
 function showAllCategories() {
     document.getElementById("catAll").classList.add("currentSort");
-    currentDisplay = sessionStorage.getItem("display");
     if (currentDisplay === "all") {
         document.getElementById("product-wrapper").innerHTML = "";
         for (let i = 0; i < gameList.length; i++) {
@@ -247,7 +249,7 @@ function sortCheap() {
     document.getElementById("sortExp").classList.remove("chosenSort");
 }
 
-function clickOnProd(e) {
+function clickOnProd(e:Game) {
     sessionStorage.setItem("game", JSON.stringify(e));
     location.href = "http://localhost:1234/pages/productinfo.html";
 }

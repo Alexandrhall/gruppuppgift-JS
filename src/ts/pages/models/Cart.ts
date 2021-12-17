@@ -1,5 +1,4 @@
 import { ContentOfCart } from "./ContentOfCart";
-import { Game } from "./Game";
 
 export class Cart {
     cartList: ContentOfCart[];
